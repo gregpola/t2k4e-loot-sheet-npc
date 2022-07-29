@@ -55,7 +55,7 @@ class API {
         let newActorData = {
             flags: {
                 core: {
-                    sheetClass: 't2k4e.LootSheetNPCT2k4e',
+                    sheetClass: 'LootSheetNPCT2k4e',
                 },
                 lootsheetnpct2k4e: {
                     lootsheettype: 'Loot',

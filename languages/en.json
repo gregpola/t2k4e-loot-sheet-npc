@@ -101,7 +101,7 @@
                 "currency": "Currency",
                 "defaults": "Defaults",
                 "fallbacks": "Fallbacks",
-                "moduleDefaults": "Modul Defaults",
+                "moduleDefaults": "Module Defaults",
                 "merchant": "Merchant",
                 "creatureTypeFallbacks": "by type",
                 "loot": "Loot",
