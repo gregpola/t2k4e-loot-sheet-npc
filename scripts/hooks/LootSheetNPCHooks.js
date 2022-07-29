@@ -39,12 +39,12 @@ export class LootsheetNPCHooks {
     static foundrySetup() {
         const moduleData = game.modules.get(MODULE.ns);
 
-        /**
-         * @type {API}
-         */
-        moduleData.public = {
-            API
-        };
+        // /**
+        //  * @type {API}
+        //  */
+        // moduleData.public = {
+        //     API
+        // };
 
         // Freeze the public API, so it can't be modified.
         Object.freeze(moduleData.public);
@@ -52,19 +52,17 @@ export class LootsheetNPCHooks {
 
     static foundryInit() {
         LootSheetSettings.registerSettings();
-
         game.socket.on(MODULE.socket, SocketListener.handleRequest);
     }
 
     static foundryReady() {
-        LootSeederSettings.registerSettings();
         HandlebarsHelper.register();
 
         if (game.user.isGM && VersionCheck.check(MODULE.ns)) {
             renderWelcomeScreen();
         }
 
-        LootsheetNPC5eHooks._handleMigrations();
+        LootsheetNPCHooks._handleMigrations();
         ChatListener.init();
     }
 
