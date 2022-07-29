@@ -4,11 +4,9 @@
   "description": "This module adds an additional NPC sheet which can be used for loot containers such as chests or corpses",
   "version": "This is auto replaced",
   "library": "false",
-  "manifestPlusVersion": "1.0.0",
-  "compatibility": {
-    "minimum": 9,
-    "verified": 9
-  },
+  "manifestPlusVersion": "1.2.0",
+  "minimumCoreVersion": "0.9.0",
+  "compatibleCoreVersion": "9.269",
   "authors": [
     {
       "name": "Greg Pola | Trazzm",
@@ -18,13 +16,7 @@
   ],
   "relationships": {
     "requires": [],
-    "systems": [
-      {
-        "id": "t2k4e",
-        "type": "system",
-        "compatibility": {}
-      }
-    ]
+    "systems": ["t2k4e"]
   },
   "esmodules": [
     "scripts/module.js"
