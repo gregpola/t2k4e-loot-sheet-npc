@@ -1,0 +1,25 @@
+<form
+    class="{{cssClass}} sheetgrid {{#if actor.flags.lootsheetnpct2k4e.sheettint.style}}styled {{actor.flags.lootsheetnpct2k4e.sheettint.style}}{{/if}} {{#if actor.flags.lootsheetnpct2k4e.darkMode}}darkMode{{/if}}"
+    autocomplete="off" data-sheettint-value="{{actor.flags.lootsheetnpct2k4e.sheettint.value}}"
+    data-sheettint-alpha="{{actor.flags.lootsheetnpct2k4e.sheettint.alpha}}"
+    {{#if actor.flags.lootsheetnpct2k4e.sheettint.value}}
+        style="
+        --sheettint: {{hexToRGB actor.flags.lootsheetnpct2k4e.sheettint.value actor.flags.lootsheetnpct2k4e.sheettint.alpha}};
+        --avatartint: {{hexToRGB actor.flags.lootsheetnpct2k4e.avatartint.value actor.flags.lootsheetnpct2k4e.avatartint.alpha}};
+        --blendmode: {{actor.flags.lootsheetnpct2k4e.sheettint.blendmode}};
+        {{#ifeq actor.flags.lootsheetnpct2k4e.sheettint.style 'custom'}}
+        --custom-background: url(/{{actor.flags.lootsheetnpct2k4e.custom.background}});
+        {{/ifeq}}
+        --style: {{#if actor.flags.lootsheetnpct2k4e.sheettint.style}}{{actor.flags.lootsheetnpct2k4e.sheettint.style}} ohh{{else}}none{{/if}};
+    {{/if}}">
+    <!-- <section class="sheet-upper"> -->
+
+    <!-- HEADER -->
+    {{> "modules/t2k4e-loot-sheet-npc/templates/partials/header.hbs"}}
+
+    <!-- BODY -->
+    {{> "modules/t2k4e-loot-sheet-npc/templates/partials/body.hbs"}}
+
+    <!-- FOOTER -->
+    {{> "modules/t2k4e-loot-sheet-npc/templates/partials/footer.hbs"}}
+</form>
