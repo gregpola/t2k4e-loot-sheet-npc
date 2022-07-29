@@ -142,15 +142,15 @@ export class LootSheetSettings {
         // });
 
 
-        game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.showStackWeight, {
-            name: game.i18n.localize('lsnpc.settings.sheet.showStackWeight.name'),
-            hint: game.i18n.localize('lsnpc.settings.sheet.showStackWeight.hint'),
-            scope: MODULE.settings.scopes.world,
-            group: MODULE.settings.groups.sheet.merchant,
-            config: false,
-            default: false,
-            type: Boolean
-        });
+        // game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.showStackWeight, {
+        //     name: game.i18n.localize('lsnpc.settings.sheet.showStackWeight.name'),
+        //     hint: game.i18n.localize('lsnpc.settings.sheet.showStackWeight.hint'),
+        //     scope: MODULE.settings.scopes.world,
+        //     group: MODULE.settings.groups.sheet.merchant,
+        //     config: false,
+        //     default: false,
+        //     type: Boolean
+        // });
 
         game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.reduceUpdateVerbosity, {
             name: game.i18n.localize('lsnpc.settings.sheet.reduceUpdateVerbosity.name'),
@@ -171,9 +171,5 @@ export class LootSheetSettings {
         //     default: 200,
         //     type: Number
         // });
-
-        /**
-         * UI and Themes
-         */
     }
 }

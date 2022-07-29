@@ -14,7 +14,6 @@ export class LootSheetSettingsConfigApp extends FormApplication {
 
     loadTemplates([
       `${MODULE.templateAppsPath}/settings.hbs`,
-      `${MODULE.templatePartialsPath}/settings/actions.hbs`,
       `${MODULE.templatePartialsPath}/settings/dropdown_options.hbs`,
       `${MODULE.templatePartialsPath}/settings/filters.hbs`,
       `${MODULE.templatePartialsPath}/settings/tabContent.hbs`,
@@ -56,21 +55,21 @@ export class LootSheetSettingsConfigApp extends FormApplication {
           i18nName: game.i18n.localize('lsnpc.settings.menu.moduleDefaults'),
           class: "fas fa-cog", menus: [], settings: []
         },
-        {
-          name: MODULE.settings.groups.sheet.ui,
-          i18nName: game.i18n.localize('lsnpc.settings.menu.ui'),
-          class: "fas fa-bag", menus: [], settings: []
-        },
+        // {
+        //   name: MODULE.settings.groups.sheet.ui,
+        //   i18nName: game.i18n.localize('lsnpc.settings.menu.ui'),
+        //   class: "fas fa-bag", menus: [], settings: []
+        // },
         {
           name: MODULE.settings.groups.sheet.loot,
           i18nName: game.i18n.localize('lsnpc.settings.menu.loot'),
           class: "fab fa-grunt", menus: [], settings: []
-        },
-        {
-          name: MODULE.settings.groups.sheet.merchant,
-          i18nName: `${game.i18n.localize('lsnpc.settings.menu.merchant')}`,
-          class: "fas fa-coins", menus: [], settings: []
         }
+        // {
+        //   name: MODULE.settings.groups.sheet.merchant,
+        //   i18nName: `${game.i18n.localize('lsnpc.settings.menu.merchant')}`,
+        //   class: "fas fa-coins", menus: [], settings: []
+        // }
       ]
     };
 

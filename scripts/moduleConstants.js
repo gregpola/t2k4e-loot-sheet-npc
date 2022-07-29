@@ -60,7 +60,6 @@ export const MODULE = {
         groups: {
             sheet: {
                 moduleDefaults: 'moduleDefaults',
-                ui: 'UI',
                 loot: 'Loot'
             }
         },
@@ -85,22 +84,6 @@ export const MODULE = {
                 stackBuyConfirm: 'stackBuyConfirm',
                 showStackWeight: 'showStackWeight',
                 tradeItems: 'tradeItems'
-            },
-            lootseeder: {
-                seederOptions: 'seederOptions',
-                autoSeedTokens: 'autoSeedTokens',
-                creatureTypeFallbacks: 'creatureTypeFallbacks',
-                customFallbackSwitch: 'customFallbackSwitch',
-                customFallbacks: 'customFallbacks',
-                rulesets: 'rulesets',
-                fallbackRolltable: 'fallbackRolltable',
-                fallbackShopQty: 'fallbackShopQty',
-                fallbackItemQty: 'fallbackItemQty',
-                fallbackItemQtyLimit: 'fallbackItemQtyLimit',
-                generateCurrency: 'generateCurrency',
-                lootCurrencyDefault: 'lootCurrencyDefault',
-                useRulesets: 'useRulesets',
-                useSkiplist: 'useSkiplist'
             }
         }
     }
