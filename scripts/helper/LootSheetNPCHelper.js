@@ -197,4 +197,3 @@ export class LootSheetNPCHelper {
         return groups;
     }
 }
-export { LootSheetNPCHelper };
