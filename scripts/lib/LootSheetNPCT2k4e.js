@@ -76,7 +76,7 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
             sheetType = await this._prepareSheetType(typeKey);
 
         let context = super.getData(),
-            sheetDataActorItems = context.actor.items;
+            sheetDataActorItems = context.actor.data.items;
 
         context.lootsheettype = sheetType;
         context.priceModifier = 1;
@@ -309,7 +309,7 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
         loot.playersPermissionDescription = PermissionHelper.getPermissionInfo(permissions.playersPermission)?.description;
 
         sheetData.rolltables = gameWorldTables;
-        sheetData.actor.flags.lootsheetnpct2k4e = {...this.actor.data.flags?.lootsheetnpct2k4e, ...loot};
+        sheetData.actor.data.flags.lootsheetnpct2k4e = {...this.actor.data.flags?.lootsheetnpct2k4e, ...loot};
         return sheetData;
     }
 
