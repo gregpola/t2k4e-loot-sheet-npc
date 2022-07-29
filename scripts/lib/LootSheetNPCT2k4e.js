@@ -124,9 +124,7 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
         if (darkMode === 'true') appClasses.push("lsnpc-darkMode");
         if (sheetStyle && sheetStyle.length) appClasses.push('styled ' + sheetStyle);
 
-
         this.options.classes = [...new Set(appClasses)];
-
         super.render(force, options);
     }
 

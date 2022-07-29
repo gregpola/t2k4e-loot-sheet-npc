@@ -27,7 +27,7 @@
     </section>
     <section class="player-inventory">
         <main class="inventory-wrapper" data-event-target="player" data-event-action="{{#ifeq lootsheettype "Merchant"}}sell{{else}}give{{/ifeq}}">
-            {{> "modules/modules/lootsheetnpct2k4e/templates/partials/trade/inventory.hbs" inventoryData=actor.playerInventory mode="player"}}
+            {{> "modules/t2k4e-loot-sheet-npc/templates/partials/trade/inventory.hbs" inventoryData=actor.playerInventory mode="player"}}
         </main>
     </section>
 </main>
