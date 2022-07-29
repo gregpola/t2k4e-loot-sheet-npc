@@ -32,7 +32,7 @@ export const MODULE = {
             }
         }
     },
-    ns: 'lootsheetnpct2k4e',
+    ns: 't2k4e-loot-sheet-npc',
     path: 'modules/t2k4e-loot-sheet-npc',
     templatePath: 'modules/t2k4e-loot-sheet-npc/templates',
     templateAppsPath: 'modules/t2k4e-loot-sheet-npc/templates/apps',

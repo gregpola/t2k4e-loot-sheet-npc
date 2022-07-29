@@ -39,12 +39,12 @@ export class LootsheetNPCHooks {
     static foundrySetup() {
         const moduleData = game.modules.get(MODULE.ns);
 
-        // /**
-        //  * @type {API}
-        //  */
-        // moduleData.public = {
-        //     API
-        // };
+        /**
+         * @type {API}
+         */
+        moduleData.public = {
+            API
+        };
 
         // Freeze the public API, so it can't be modified.
         Object.freeze(moduleData.public);
@@ -185,7 +185,7 @@ export class LootsheetNPCHooks {
             lsnGMButtonMakeObservable.addEventListener('click', async (e) => {
                 if (game.user.isGM) {
                     ui.notifications.info(`Lootsheet: Converting token(s) to lootable.`);
-                    const api = game.modules.get("lootsheetnpct2k4e").public.API;
+                    const api = game.modules.get("t2k4e-loot-sheet-npc").public.API;
                     await api.convertTokens();
                 }
             });
