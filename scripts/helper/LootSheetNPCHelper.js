@@ -5,14 +5,14 @@ import { ItemHelper } from "./ItemHelper.js";
 import { SocketListener } from "../hooks/SocketListener.js";
 
 /**
- * @Module lootsheetnpct2k4e.Helpers.LootSheetNPC5eHelper
+ * @Module lootsheetnpct2k4e.Helpers.LootSheetNPCHelper
  *
  * @description Helper Methods for the Loot Sheet NPC t2k4e Module
  */
 export class LootSheetNPCHelper {
 
     /**
-     * @Module lootsheetnpct2k4e.Helpers.LootSheetNPC5eHelper.changeSheetType
+     * @Module lootsheetnpct2k4e.Helpers.LootSheetNPCHelper.changeSheetType
      *
      * @description Change the {ActorT2K}'s sheet type flag
      *
@@ -44,7 +44,7 @@ export class LootSheetNPCHelper {
     }
 
     /**
-     * @module lootsheetnpct2k4e.Helpers.LootSheetNPC5eHelper.sendActionToSocket
+     * @module lootsheetnpct2k4e.Helpers.LootSheetNPCHelper.sendActionToSocket
      *
      * @description Send an action to the socket
      *
@@ -104,7 +104,7 @@ export class LootSheetNPCHelper {
     }
 
     /**
-     * @module lootsheetnpct2k4e.Helpers.LootSheetNPC5eHelper._handleTradeStage
+     * @module lootsheetnpct2k4e.Helpers.LootSheetNPCHelper._handleTradeStage
      * @description Handle the trade stage
      *
      * @param {event} event
@@ -197,4 +197,4 @@ export class LootSheetNPCHelper {
         return groups;
     }
 }
-export { LootSheetNPC5eHelper };
+export { LootSheetNPCHelper };
