@@ -183,12 +183,6 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
         sheetDataActorItems.forEach((item) => totalQuantity += Math.round((item.data.quantity * 100) / 100));
         sheetDataActorItems.forEach((item) => totalWeight += Math.round((item.data.quantity * item.data.weight * 100) / 100));
 
-        if (game.settings.get(MODULE.ns, "includeCurrencyWeight")) {
-            totalWeight += (Object.values(this.actor.data.data.currency).reduce(function (accumVariable, curValue) {
-                return accumVariable + curValue
-            }, 0) / 50).toNearest(0.01);
-        }
-
         return { weight: totalWeight, price: totalPrice, quantity: totalQuantity };
     }
 
