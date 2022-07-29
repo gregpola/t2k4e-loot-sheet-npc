@@ -21,9 +21,6 @@
   "esmodules": [
     "scripts/module.js"
   ],
-  "scripts": [
-    "scripts/lib/LootSheetNPCT2k4e.js"
-  ],
   "styles": [
     "styles/module.css"
   ],
