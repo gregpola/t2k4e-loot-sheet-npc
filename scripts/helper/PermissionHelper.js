@@ -44,7 +44,7 @@ export class PermissionHelper {
         const actorData = actor.data,
             htmlObject = event.currentTarget,
             permissionValue = (!htmlObject.dataset.value) ? 0 : parseInt(htmlObject.dataset.value);
-        let currentPermissions = duplicate(actorData.permission);
+        let currentPermissions = duplicate(actorData.data.permission);
 
         //update permissions object
         for (let user of game.users) {
@@ -120,9 +120,9 @@ export class PermissionHelper {
      * @returns {number} Permission Enum value
      */
     static getLootPermissionForPlayer(actorData, player) {
-        let defaultPermission = actorData.permission.default;
-        if (player.data._id in actorData.permission) {
-            return actorData.permission[player.data._id];
+        let defaultPermission = actorData.data.permission.default;
+        if (player.data._id in actorData.data.permission) {
+            return actorData.data.permission[player.data._id];
         } else if (typeof defaultPermission !== "undefined") {
             return defaultPermission;
         }
