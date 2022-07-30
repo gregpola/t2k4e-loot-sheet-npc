@@ -1,22 +1,25 @@
 <main class="sheet-body content">
-    <div class="tab active" data-tab="inventory" data-group="primary">
-        <!-- FEATURES -->
-        <div class="features" data-group="primary" data-tab="features">
-            {{#if isCondensedView}}
-                {{> "modules/t2k4e-loot-sheet-npc/templates/partials/list/condensed.hbs"}}
-            {{else}}
-                {{> "modules/t2k4e-loot-sheet-npc/templates/partials/list/default.hbs"}}
-            {{/if}}
-        </div>
+    {{!-- Equipment Tab --}}
+    <div class="tab tab-equipment flexcol" data-group="primary" data-tab="equipment">
+        {{> 'modules/t2k4e-loot-sheet-npc/templates/partials/buttons/lootAll.hbs'}}
+        {{> "systems/t2k4e/templates/actors/parts/actor-equipment.hbs"}}
     </div>
 
-    <div class="tab trade" data-tab="trade" data-group="primary">
-        {{> "modules/t2k4e-loot-sheet-npc/templates/partials/trade/index.hbs"}}
+<!--    <div class="tab active" data-tab="equipment" data-group="primary">-->
+<!--        <div class="features" data-group="primary" data-tab="features">-->
+<!--            {{#if isCondensedView}}-->
+<!--                {{> "modules/t2k4e-loot-sheet-npc/templates/partials/list/condensed.hbs"}}-->
+<!--            {{else}}-->
+<!--                {{> "modules/t2k4e-loot-sheet-npc/templates/partials/list/default.hbs"}}-->
+<!--            {{/if}}-->
+<!--        </div>-->
+<!--    </div>-->
+
+    {{!-- Description Tab --}}
+    <div class="tab tab-description" data-group="primary" data-tab="description">
+        {{> "systems/t2k4e/templates/actors/parts/actor-description.hbs"}}
     </div>
-    <div class="tab" data-tab="biography" data-group="primary">
-        {{editor content=data.details.biography.value target="data.details.biography.value"
-            button=true owner=owner editable=editable}}
-    </div>
+
     {{#if isGM}}
         <div class="tab" data-tab="gm-settings" data-group="primary">
             {{> "modules/t2k4e-loot-sheet-npc/templates/partials/gm/gm-settings.hbs"}}
