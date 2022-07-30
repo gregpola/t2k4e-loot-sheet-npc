@@ -1,7 +1,7 @@
 import { MODULE } from "../moduleConstants.js";
 import { LootSheetNPCHelper } from "../helper/LootSheetNPCHelper.js";
 import { PermissionHelper } from "../helper/PermissionHelper.js";
-import {SheetHelper} from "../helper/SheetHelper";
+import {SheetHelper} from "../helper/SheetHelper.js";
 //import { TooltipListener } from "./TooltipListener.js";
 
 export class SheetListener {
