@@ -62,11 +62,11 @@ export class SheetListener {
     _activateOwnerGMListeners(app) {
         const bulkPermissions = app.querySelectorAll('.permission-option a'),
             individualPermissions = app.querySelectorAll('.permission-proficiency'),
-            permissionsFilter = app.querySelector('.permissions-filter'),
+            permissionsFilter = app.querySelector('.permissions-filter');
             // priceModifierDialog = app.querySelector('.price-modifier'),
             // sheetStylings = app.querySelector('.gm-settings .sheet-style'),
             // inventorySettings = app.querySelector('.gm-settings .inventory-settings'),
-            inventoryUpdate = app.querySelector('.gm-settings .update-inventory');
+            // nventoryUpdate = app.querySelector('.gm-settings .update-inventory');
 
         if (game.user.isGM) {
             for (let button of bulkPermissions) {
@@ -86,7 +86,7 @@ export class SheetListener {
         //
         // inventorySettings.addEventListener('change', ev => this.inventorySettingChange(ev, this.actor));
         // sheetStylings.addEventListener('change', ev => this.sheetStyleChange(ev, this.actor));
-        inventoryUpdate.addEventListener('click', ev => this.inventoryUpdateListener(ev));
+        //inventoryUpdate.addEventListener('click', ev => this.inventoryUpdateListener(ev));
         // toggle infoboxes
     }
 
