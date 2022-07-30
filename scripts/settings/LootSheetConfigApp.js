@@ -17,7 +17,6 @@ export class LootSheetSettingsConfigApp extends FormApplication {
       `${MODULE.templatePartialsPath}/settings/dropdown_options.hbs`,
       `${MODULE.templatePartialsPath}/settings/filters.hbs`,
       `${MODULE.templatePartialsPath}/settings/tabContent.hbs`,
-      `${MODULE.templatePartialsPath}/settings/seederFilters.hbs`,
       `${MODULE.templatePartialsPath}/settings/menu.hbs`,
     ]);
 

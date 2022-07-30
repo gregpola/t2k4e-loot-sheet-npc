@@ -21,6 +21,13 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
             MODULE.templatePartialsPath + "/body.hbs",
             MODULE.templatePartialsPath + "/footer.hbs",
             MODULE.templatePartialsPath + "/header.hbs",
+            MODULE.templatePartialsPath + "/equipment.hbs",
+            MODULE.templatePartialsPath + "/slots/ammo-slot.hbs",
+            MODULE.templatePartialsPath + "/slots/armor-slot.hbs",
+            MODULE.templatePartialsPath + "/slots/gear-slot.hbs",
+            MODULE.templatePartialsPath + "/slots/slot-buttons.hbs",
+            MODULE.templatePartialsPath + "/slots/vehicle-weapon-slot.hbs",
+            MODULE.templatePartialsPath + "/slots/weapon-slot.hbs",
             MODULE.templatePartialsPath + "/buttons/lootAll.hbs",
             MODULE.templatePartialsPath + "/header/navigation.hbs",
             MODULE.templatePartialsPath + "/list/" + sheetType + ".hbs",
@@ -30,10 +37,7 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
 
         if (game.user.isGM) {
             templateList.push(MODULE.templatePartialsPath + "/gm/gm-settings.hbs");
-            templateList.push(MODULE.templatePartialsPath + "/gm/inventory.hbs");
-            templateList.push(MODULE.templatePartialsPath + "/gm/lootsheet-type.hbs");
             templateList.push(MODULE.templatePartialsPath + "/gm/permissions.hbs");
-            templateList.push(MODULE.templatePartialsPath + "/gm/styling.hbs");
         }
 
         loadTemplates(templateList);
