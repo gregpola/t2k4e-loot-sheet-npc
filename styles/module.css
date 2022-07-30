@@ -21,6 +21,11 @@
     --primary-accent: #ff6400;
     --secondary-color: rgba(0, 0, 0, 0.65);
     --tertiary-color: rgba(0, 0, 0, 0.4);
+    --faint-white: rgba(255, 255, 255, 0.2);
+    --linked-accent: rgba(0, 255, 0, 0.75);
+    --safe-accent: rgba(0, 150, 100, 0.6);
+    --unsafe-accent: rgba(255, 0, 0, 0.6);
+
 }
 
 /** Imported from lootsheetnpc5e */
@@ -278,3 +283,27 @@ input#quantity:focus {
     cursor: pointer;
 }
 
+.lsnpc.actor .window-content {
+    /*color: var(--primary-font);*/
+    padding: 0;
+    display: flex;
+    align-items: center;
+    /*background: var(--faintest-color);*/
+}
+.lsnpc.actor .window-content .hidden {
+    display: none;
+}
+.lsnpc.actor .window-content .collapser {
+    position: relative;
+    float: left;
+    flex: none;
+    border: 1px solid var(--faint-white);
+    background: var(--safe-accent);
+    height: fit-content;
+    padding: 0.3em;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-left: none;
+    cursor: pointer;
+    z-index: 200;
+}

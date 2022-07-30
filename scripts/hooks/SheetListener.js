@@ -1,7 +1,7 @@
 import { MODULE } from "../moduleConstants.js";
 import { LootSheetNPCHelper } from "../helper/LootSheetNPCHelper.js";
 import { PermissionHelper } from "../helper/PermissionHelper.js";
-//import { SheetHelper } from "../helper/SheetHelper.js";
+import {SheetHelper} from "../helper/SheetHelper";
 //import { TooltipListener } from "./TooltipListener.js";
 
 export class SheetListener {
@@ -49,7 +49,7 @@ export class SheetListener {
         }
 
         for (let helpText of helpTexts) {
-            helpText.addEventListener('hover', ev => SheetListener.toggleHelp(ev));
+            helpText.addEventListener('hover', ev => SheetHelper.toggleHelp(ev));
         }
 
         if (options && options?.verbose) console.log(`${MODULE.ns} | Sheet | Listeners activated`);
