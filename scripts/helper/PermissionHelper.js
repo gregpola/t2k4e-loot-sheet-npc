@@ -1,4 +1,5 @@
 import { MODULE } from '../moduleConstants.js';
+import ActorT2K from "/systems/t2k4e/module/actor/actor.js";
 
 export class PermissionHelper {
 
@@ -231,7 +232,7 @@ export class PermissionHelper {
      * does not view the scene by the time of the check.
      *
      * @param {Array<string>} eligables
-     * @param {Actor} actor
+     * @param {ActorT2K} actor
      *
      * @returns {Array<string>} eligables
      *
@@ -241,8 +242,10 @@ export class PermissionHelper {
      * @since 3.4.5.3
      */
     static filterByPlayerViewingScene(eligables, actor) {
-        const playersInScene = game.users.players.filter((player) => player.viewedScene == actor.parent.parent.id).map(p => p.id);
-        eligables = eligables.filter(playerId => playersInScene.includes(playerId));
+        if (actor != null && actor.parent != null) {
+            const playersInScene = game.users.players.filter((player) => player.viewedScene == actor.parent.parent.id).map(p => p.id);
+            eligables = eligables.filter(playerId => playersInScene.includes(playerId));
+        }
         console.log(`${MODULE.ns} |  \\-->  | Filtered for players that view the scene. ${eligables.length} players with eligable characters.`);
         return eligables;
     }
