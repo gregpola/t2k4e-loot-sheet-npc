@@ -4,7 +4,8 @@ import { LootsheetNPCHooks } from './hooks/LootSheetNPCHooks.js';
 //Register the loot sheet
 Actors.registerSheet("t2k4e", LootSheetNPCT2k4e, {
     types: ["npc"],
-    makeDefault: false
+    makeDefault: false,
+    label: 'T2K4E.LootSheet',
 });
 
 /**

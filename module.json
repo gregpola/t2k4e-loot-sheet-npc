@@ -31,6 +31,26 @@
       "path": "languages/en.json"
     }
   ],
+  "packs": [
+    {
+      "name": "t2k4e-loot-sheet-items",
+      "label": "T2K4E Loot Sheet Items",
+      "module": "t2k4e-loot-sheet-npc",
+      "system": "t2k4e",
+      "path": "./packs/items.db",
+      "entity": "Item",
+      "type": "Item"
+    },
+    {
+      "name": "t2k4e-loot-sheet-macros",
+      "label": "T2K4E Loot Sheet Macros",
+      "module": "t2k4e-loot-sheet-npc",
+      "system": "t2k4e",
+      "path": "./packs/macros.db",
+      "entity": "Macro",
+      "type": "Macro"
+    }
+  ],
   "url": "This is auto replaced",
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",

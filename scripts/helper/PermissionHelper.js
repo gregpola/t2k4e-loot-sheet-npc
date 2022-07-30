@@ -154,7 +154,7 @@ export class PermissionHelper {
             eligibles = game.users.filter(u => eligibleUsers.includes(u.id) && u.character).map(u => u.id);
 
         const permissionsFilter = actor.getFlag(MODULE.ns, 'permissionsFilter');
-        console.log(`${MODULE.ns} | PermissionsHelper | getEligablePlayerActors | ${eligibles.length} players with eligable characters found.`);
+        console.log(`${MODULE.ns} | PermissionsHelper | getEligiblePlayerActors | ${eligibles.length} players with eligible characters found.`);
 
         switch (permissionsFilter) {
             case "1": // filter out those that do not view the scene
@@ -162,13 +162,13 @@ export class PermissionHelper {
                 break;
             case "2": // filter out those that do not have a token in the scene
                 eligibles = this.filterByTokenInScene(eligibles);
-                console.log(`${MODULE.ns} |  \\-->  | Filtered for players with a token in the tokens scene. ${eligibles.length} players with eligable characters.`);
+                console.log(`${MODULE.ns} |  \\-->  | Filtered for players with a token in the tokens scene. ${eligibles.length} players with eligible characters.`);
                 break;
             case "3": // filter both
                 eligibles = this.filterByPlayerViewingScene(eligibles, actor);
-                console.log(`${MODULE.ns} |  \\-->  | Filtered for players that view the scene. ${eligibles.length} players with eligable characters.`);
+                console.log(`${MODULE.ns} |  \\-->  | Filtered for players that view the scene. ${eligibles.length} players with eligible characters.`);
                 eligibles = this.filterByTokenInScene(eligibles);
-                console.log(`${MODULE.ns} |  \\-->  | Filtered for players with a token in the tokens scene. ${eligibles.length} players with eligable characters.`);
+                console.log(`${MODULE.ns} |  \\-->  | Filtered for players with a token in the tokens scene. ${eligibles.length} players with eligible characters.`);
         }
 
         return eligibles;
