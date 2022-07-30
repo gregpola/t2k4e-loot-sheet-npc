@@ -1,7 +1,7 @@
 import { MODULE } from "../moduleConstants.js";
 import { LootSheetNPCHelper } from "../helper/LootSheetNPCHelper.js";
 import { PermissionHelper } from "../helper/PermissionHelper.js";
-import { SheetHelper } from "../helper/SheetHelper.js";
+//import { SheetHelper } from "../helper/SheetHelper.js";
 //import { TooltipListener } from "./TooltipListener.js";
 
 export class SheetListener {
@@ -63,9 +63,9 @@ export class SheetListener {
         const bulkPermissions = app.querySelectorAll('.permission-option a'),
             individualPermissions = app.querySelectorAll('.permission-proficiency'),
             permissionsFilter = app.querySelector('.permissions-filter'),
-            priceModifierDialog = app.querySelector('.price-modifier'),
-            sheetStylings = app.querySelector('.gm-settings .sheet-style'),
-            inventorySettings = app.querySelector('.gm-settings .inventory-settings'),
+            // priceModifierDialog = app.querySelector('.price-modifier'),
+            // sheetStylings = app.querySelector('.gm-settings .sheet-style'),
+            // inventorySettings = app.querySelector('.gm-settings .inventory-settings'),
             inventoryUpdate = app.querySelector('.gm-settings .update-inventory');
 
         if (game.user.isGM) {
@@ -80,12 +80,12 @@ export class SheetListener {
             permissionsFilter.addEventListener('change', ev => this.actor.setFlag(MODULE.ns, 'permissionsFilter', ev.target.value));
         }
 
-        if (priceModifierDialog) {
-            priceModifierDialog.addEventListener('click', ev => SheetHelper.renderPriceModifierDialog(ev, this.actor));
-        }
-
-        inventorySettings.addEventListener('change', ev => this.inventorySettingChange(ev, this.actor));
-        sheetStylings.addEventListener('change', ev => this.sheetStyleChange(ev, this.actor));
+        // if (priceModifierDialog) {
+        //     priceModifierDialog.addEventListener('click', ev => SheetHelper.renderPriceModifierDialog(ev, this.actor));
+        // }
+        //
+        // inventorySettings.addEventListener('change', ev => this.inventorySettingChange(ev, this.actor));
+        // sheetStylings.addEventListener('change', ev => this.sheetStyleChange(ev, this.actor));
         inventoryUpdate.addEventListener('click', ev => this.inventoryUpdateListener(ev));
         // toggle infoboxes
     }
@@ -125,7 +125,7 @@ export class SheetListener {
             uuid: item.uuid,
             eventAction: event.currentTarget.closest('main').dataset.eventAction,
             source: event.currentTarget.closest('section'),
-            stack: event.type == 'click' ? false : true
+            stack: event.type === 'click' ? false : true
         };
         this._tradeItemStagingHandler(data, event);
     }
@@ -148,8 +148,6 @@ export class SheetListener {
      * Update the sheets inventory
      *
      * @param {Event} event
-     * @param {Actor} this.actor
-     * @param {Token} this.token
      *
      * @returns
      */
@@ -167,77 +165,77 @@ export class SheetListener {
         await LootSeeder.seedItemsToActors([this.actor], { force: true });
     }
 
-    /**
-     * Handle merchant settings change
-     * @private
-     */
-    async inventorySettingChange(event, actor) {
-        return;
-        event.preventDefault();
-        event.stopPropagation();
+    // /**
+    //  * Handle merchant settings change
+    //  * @private
+    //  */
+    // async inventorySettingChange(event, actor) {
+    //     return;
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //
+    //     // @todo get this from the settings, leverage the constants, if key exists in MODULE.
+    //     const expectedKeys = [
+    //         "lootsheettype",
+    //         "rolltable",
+    //         "shopQty",
+    //         "itemQty",
+    //         "itemQtyLimit",
+    //         "clearInventory",
+    //         "itemOnlyOnce",
+    //         "currencyFormula"
+    //     ];
+    //
+    //     let targetKey = event.target.name.split('.')[3];
+    //
+    //     console.log('key check' , expectedKeys.includes(targetKey));
+    //
+    //     if (!expectedKeys.includes(targetKey)) {
+    //         console.log(MODULE.ns + ` | Error changing stettings for "${targetKey}".`);
+    //         return ui.notifications.error(`Error changing stettings for "${targetKey}".`);
+    //     }
+    //
+    //     if (targetKey == "clearInventory" || targetKey == "itemOnlyOnce") {
+    //         console.log(MODULE.ns + " | " + targetKey + " set to " + event.target.checked);
+    //         await actor.setFlag(MODULE.ns, targetKey, event.target.checked);
+    //         return;
+    //     }
+    //
+    //     await actor.setFlag(MODULE.ns, targetKey, event.target.value);
+    //     console.log(MODULE.ns + " | " + targetKey + " set to " + event.target.value);
+    // }
 
-        // @todo get this from the settings, leverage the constants, if key exists in MODULE.
-        const expectedKeys = [
-            "lootsheettype",
-            "rolltable",
-            "shopQty",
-            "itemQty",
-            "itemQtyLimit",
-            "clearInventory",
-            "itemOnlyOnce",
-            "currencyFormula"
-        ];
-
-        let targetKey = event.target.name.split('.')[3];
-
-        console.log('key check' , expectedKeys.includes(targetKey));
-
-        if (!expectedKeys.includes(targetKey)) {
-            console.log(MODULE.ns + ` | Error changing stettings for "${targetKey}".`);
-            return ui.notifications.error(`Error changing stettings for "${targetKey}".`);
-        }
-
-        if (targetKey == "clearInventory" || targetKey == "itemOnlyOnce") {
-            console.log(MODULE.ns + " | " + targetKey + " set to " + event.target.checked);
-            await actor.setFlag(MODULE.ns, targetKey, event.target.checked);
-            return;
-        }
-
-        await actor.setFlag(MODULE.ns, targetKey, event.target.value);
-        console.log(MODULE.ns + " | " + targetKey + " set to " + event.target.value);
-    }
-
-    /**
-     * Handle style changes manually
-     *
-     * @param {Event} event
-     * @param {Actor} actor
-     *
-     * @private
-     */
-    async sheetStyleChange(event, actor) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        // @todo get this from the settings, leverage the constants, if key exists in MODULE.
-        const expectedKeys = ["sheettint", "avatartint", "customBackground", "blendmode", "darkMode"];
-
-        let splittedName = event.target.name.split('.'),
-            targetKey = splittedName[2],
-            targetExtra = splittedName[3];
-
-            console.log(MODULE.ns + " | key check" , event.target.name, expectedKeys.includes(targetKey));
-        if (!expectedKeys.includes(targetKey)) return;
-
-        if (!targetExtra) {
-            const value = event.target.checked === undefined ? event.target.value : event.target.checked;
-            await actor.setFlag(MODULE.ns, targetKey, value);
-        } else {
-            await actor.setFlag(MODULE.ns, targetKey + '.' + targetExtra, event.target.value);
-        }
-
-        //await TokenHelper.handleRerender(actor.uuid);
-    }
+    // /**
+    //  * Handle style changes manually
+    //  *
+    //  * @param {Event} event
+    //  * @param {Actor} actor
+    //  *
+    //  * @private
+    //  */
+    // async sheetStyleChange(event, actor) {
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //
+    //     // @todo get this from the settings, leverage the constants, if key exists in MODULE.
+    //     const expectedKeys = ["sheettint", "avatartint", "customBackground", "blendmode", "darkMode"];
+    //
+    //     let splittedName = event.target.name.split('.'),
+    //         targetKey = splittedName[2],
+    //         targetExtra = splittedName[3];
+    //
+    //         console.log(MODULE.ns + " | key check" , event.target.name, expectedKeys.includes(targetKey));
+    //     if (!expectedKeys.includes(targetKey)) return;
+    //
+    //     if (!targetExtra) {
+    //         const value = event.target.checked === undefined ? event.target.value : event.target.checked;
+    //         await actor.setFlag(MODULE.ns, targetKey, value);
+    //     } else {
+    //         await actor.setFlag(MODULE.ns, targetKey + '.' + targetExtra, event.target.value);
+    //     }
+    //
+    //     //await TokenHelper.handleRerender(actor.uuid);
+    // }
 
     /**
      *
