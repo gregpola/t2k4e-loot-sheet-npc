@@ -1,26 +1,54 @@
-<form
-    class="{{cssClass}} flexcol {{#if actor.flags.lootsheetnpct2k4e.sheettint.style}}styled {{actor.flags.lootsheetnpct2k4e.sheettint.style}}{{/if}} {{#if actor.flags.lootsheetnpct2k4e.darkMode}}darkMode{{/if}}"
-    autocomplete="off" data-sheettint-value="{{actor.flags.lootsheetnpct2k4e.sheettint.value}}"
-    data-sheettint-alpha="{{actor.flags.lootsheetnpct2k4e.sheettint.alpha}}"
-    {{#if actor.flags.lootsheetnpct2k4e.sheettint.value}}
-        style="
-        --sheettint: {{hexToRGB actor.flags.lootsheetnpct2k4e.sheettint.value actor.flags.lootsheetnpct2k4e.sheettint.alpha}};
-        --avatartint: {{hexToRGB actor.flags.lootsheetnpct2k4e.avatartint.value actor.flags.lootsheetnpct2k4e.avatartint.alpha}};
-        --blendmode: {{actor.flags.lootsheetnpct2k4e.sheettint.blendmode}};
-        {{#ifeq actor.flags.lootsheetnpct2k4e.sheettint.style 'custom'}}
-        --custom-background: url(/{{actor.flags.lootsheetnpct2k4e.custom.background}});
-        {{/ifeq}}
-        --style: {{#if actor.flags.lootsheetnpct2k4e.sheettint.style}}{{actor.flags.lootsheetnpct2k4e.sheettint.style}} ohh{{else}}none{{/if}};
-    {{/if}}">
+<form class="{{cssClass}} flexcol" autocomplete="off">
 
-    <!-- HEADER -->
-    {{> "modules/t2k4e-loot-sheet-npc/templates/partials/header.hbs"}}
+    {{!-- Actor Sheet Header --}}
+    <header class="sheet-header">
 
-    <!-- TABS -->
-    {{> "modules/t2k4e-loot-sheet-npc/templates/partials/header/navigation.hbs"}}
+        <img class="t2k-trombone" src="systems/t2k4e/assets/textures/trombone.png" name="trombone"/>
 
-    <!-- BODY -->
-    {{> "modules/t2k4e-loot-sheet-npc/templates/partials/body.hbs"}}
+        <div class="grid-actor-header">
 
-    <!-- FOOTER -->
+            {{!-- Actor's name --}}
+            <h1 class="name">
+                <input type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'T2K4E.ActorSheet.Name'}}"/>
+            </h1>
+
+            {{!-- Profile IMG & XP --}}
+            <div class="img">
+                <img class="profile" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
+            </div>
+
+        </div>
+
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs slanted-tabs flexrow flex-center" data-group="primary">
+        {{#if isGM}}
+            <a class="item" data-tab="gm-settings"><i class="fas fa-cog" title="{{localize " GM"}}"></i></a>
+        {{/if}}
+
+        <a class="item" data-tab="equipment">{{localize "T2K4E.ActorSheet.EquipmentTab"}}</a>
+        <a class="item" data-tab="description">{{localize "T2K4E.ActorSheet.NoteTab"}}</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        {{#if isGM}}
+            <div class="tab" data-tab="gm-settings" data-group="primary">
+                {{> "modules/t2k4e-loot-sheet-npc/templates/partials/gm/gm-settings.hbs"}}
+            </div>
+        {{/if}}
+
+        {{!-- Equipment Tab --}}
+        <div class="tab tab-equipment flexcol" data-group="primary" data-tab="equipment">
+            {{> "systems/t2k4e/templates/actors/parts/actor-equipment.hbs"}}
+        </div>
+
+        {{!-- Description Tab --}}
+        <div class="tab tab-description" data-group="primary" data-tab="description">
+            {{> "systems/t2k4e/templates/actors/parts/actor-description.hbs"}}
+        </div>
+
+    </section>
+
 </form>
