@@ -171,5 +171,14 @@ export class LootSheetSettings {
         //     default: 200,
         //     type: Number
         // });
+
+        game.settings.register(MODULE.ns, MODULE.settings.keys.common.addInterfaceButtons, {
+            name: game.i18n.localize('lsnpc.settings.addInterfaceButtons.name'),
+            hint: game.i18n.localize('lsnpc.settings.addInterfaceButtons.hint'),
+            scope: MODULE.settings.scopes.world,
+            config: true,
+            default: true,
+            type: Boolean
+        });
     }
 }
