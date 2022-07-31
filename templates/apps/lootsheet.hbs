@@ -3,21 +3,17 @@
     {{!-- Actor Sheet Header --}}
     <header class="sheet-header">
 
-        <img class="t2k-trombone" src="systems/t2k4e/assets/textures/trombone.png" name="trombone"/>
-
-        <div class="grid-actor-header">
-
-            {{!-- Actor's name --}}
-            <h1 class="name">
-                <input type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'T2K4E.ActorSheet.Name'}}"/>
-            </h1>
-
-            {{!-- Profile IMG & XP --}}
-            <div class="img">
-                <img class="profile" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
-            </div>
-
+        {{!-- Profile IMG & XP --}}
+        <div class="img" style="flex: 0; margin-right: 5px">
+            <img class="profile" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
+            <img class="" src="systems/t2k4e/assets/textures/trombone.png" name="trombone"
+                 style="position: absolute; top: 30px; left: 128px; transform: rotate(20deg); -webkit-transform: rotate(20deg); border: none; z-index: 999"/>
         </div>
+
+        {{!-- Actor's name --}}
+        <h1 class="name">
+            <input type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'T2K4E.ActorSheet.Name'}}"/>
+        </h1>
 
     </header>
 

@@ -35,42 +35,6 @@
 /** ----------------------------------------------------------------------------------------------------------------- */
 
 /** GM specific */
-.app.lsnpc .gm-section {
-    margin-top: 0.5rem;
-    text-align: center;
-    border-top: 1px solid #CCC;
-    border-bottom: 1px solid #CCC;
-    /*font-family: "Nodesto", "Signika", "Palatino Linotype", serif;*/
-    /*font-size: 20px;*/
-    /*font-size: 18px;*/
-}
-
-.app.lsnpc .gm-header {
-    margin-top: 0.5rem;
-}
-
-.app.lsnpc .gm-settings {
-    padding: 0.3em;
-}
-
-.app.lsnpc .gm-settings h4.sheet-name {
-    flex: 1;
-    margin: 0 0 0 24px;
-    line-height: 22px;
-}
-
-.app.lsnpc .gm-settings .sheet-type-info {
-    display: block;
-    position: absolute;
-    /*background: var(--background);*/
-    /*color: var(--primary-font);*/
-    box-shadow: 0 0 4px var(--context-shadow);
-    border-radius: 0.3em;
-    padding: 0.3em;
-    max-width: 15vw;
-    z-index: 1000;
-}
-
 .app.lsnpc .gm-settings .help {
     /*color: var(--primary-font);*/
     font-size: 13px;
@@ -80,16 +44,7 @@
 .app.lsnpc .infobox-wrapper {
     display: inline-block;
 }
-.app.lsnpc .itemsource-info {
-    display: block;
-    position: absolute;
-    /*background: var(--background);*/
-    /*color: var(--primary-font);*/
-    box-shadow: 0 0 4px var(--context-shadow);
-    border-radius: 0.3em;
-    padding: 0.3em;
-    max-width: 15vw;
-}
+
 .app.lsnpc .sheet-infobox {
     display: block;
     position: absolute;
@@ -122,29 +77,6 @@
     width: 75%;
 }
 
-.app.lsnpc section.sheet-sidebar.sidebar {
-    position: absolute;
-    /*background: url(/ui/parchment.jpg) repeat;*/
-    /*background-color: var(--background);*/
-    background-blend-mode: soft-light;
-    border: 1px solid var(--header-border);
-    border-left: 0;
-    box-shadow: 1px 1px 4px var(--context-shadow);
-    flex: 0 0 auto;
-    justify-content: center;
-    border-radius: 0 0.5em 0.5em 0;
-    min-width: fit-content;
-    max-width: 310px;
-    opacity: 1;
-    transition: all 0.75s ease;
-    z-index: 200;
-}
-
-.app.lsnpc section.sheet-sidebar.sidebar.hidden {
-    width: 0;
-    opacity: 0;
-}
-
 input#quantity:hover {
     border: 1px solid var(--context-outline);
     box-shadow: 0 0 8px red;
@@ -153,24 +85,30 @@ input#quantity:focus {
     border: 1px solid var(--context-outline);
     box-shadow: 0 0 8px red;
 }
+
 .app.lsnpc .gm-settings .permissiongrid {
     display: grid;
     grid-auto-columns: 0.2fr 0.8fr;
     grid-template-areas: "BULK INDIVIDUAL" "FILTER FILTER";
     gap: 0.2em;
 }
+
 .app.lsnpc .gm-settings .permissiongrid .filter {
     grid-area: FILTER;
 }
+
 .app.lsnpc .gm-settings .permissiongrid .bulk {
     grid-area: BULK;
 }
+
 .app.lsnpc .gm-settings .permissiongrid .individual {
     grid-area: INDIVIDUAL;
 }
+
 .app.lsnpc .gm-settings .permissiongrid ul {
     border-radius: 0.4em;
 }
+
 .app.lsnpc .gm-settings .permissions-options,
 .app.lsnpc .gm-settings .permissions-list {
     align-items: flex-start;
@@ -185,6 +123,7 @@ input#quantity:focus {
     overflow-x: auto;
     max-width: 301px;
 }
+
 .app.lsnpc .gm-settings .permissions-options a,
 .app.lsnpc .gm-settings .permissions-list a {
     /*background: var(--faint-color);*/
@@ -194,37 +133,44 @@ input#quantity:focus {
     border-radius: 0.5em;
     text-align: center;
 }
+
 .app.lsnpc .gm-settings .permissions-options a:hover,
 .app.lsnpc .gm-settings .permissions-list a:hover {
     border-color: var(--secondary-color);
     text-shadow: 0 0 8px var(--secondary-color);
 }
+
 .app.lsnpc .gm-settings .permissions-options a i,
 .app.lsnpc .gm-settings .permissions-list a i {
     line-height: 1.6em;
     text-align: center;
     width: 100%;
 }
+
 .app.lsnpc .gm-settings .permissions-options .none-border-permission,
 .app.lsnpc .gm-settings .permissions-list .none-border-permission {
     color: var(--primary-accent);
     border-color: var(--primary-accent);
 }
+
 .app.lsnpc .gm-settings .permissions-options .observer-border-permission,
 .app.lsnpc .gm-settings .permissions-list .observer-border-permission {
     color: var(--prepared);
     border-color: var(--prepared);
 }
+
 .app.lsnpc .gm-settings .permissions-options .owner-border-permission,
 .app.lsnpc .gm-settings .permissions-list .owner-border-permission {
     color: var(--checkbox-checked);
     border-color: var(--checkbox-checked);
 }
+
 .app.lsnpc .gm-settings .permissions-options .permission,
 .app.lsnpc .gm-settings .permissions-list .permission {
     flex: 0 0 var(--icon-size);
     position: relative;
 }
+
 .app.lsnpc .gm-settings .permissions-options .permission .permission-proficiency,
 .app.lsnpc .gm-settings .permissions-list .permission .permission-proficiency {
     width: var(--icon-size);
@@ -258,55 +204,29 @@ input#quantity:focus {
     text-shadow: 0 0 var(--icon-background);
 }
 
-.lsnpc.loot-item-card .loot-info {
-    background: linear-gradient(270deg, var(--sheettint), transparent);
-    margin-bottom: 0.1em;
-}
+/*.lsnpc.actor .window-content {*/
+/*    !*color: var(--primary-font);*!*/
+/*    padding: 0;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    !*background: var(--faintest-color);*!*/
+/*}*/
 
-.lsnpc.loot-item-card .loot-info .action-message {
-    text-align: center;
-}
-
-.lsnpc.loot-item-card .loot-info .lsnpc-document-link {
-    flex: 0 0 22px;
-    padding: 0;
-    height: 22px;
-}
-
-.lsnpc.loot-item-card .loot-info .lsnpc-document-link .looter-icon {
-    width: 100%;
-    height: 100%;
-}
-
-.lsnpc.loot-item-card .loot-info .lsnpc-document-link .npc-icon img {
-    box-shadow: 0 0 2px 1px var(--avatartint);
-}
-
-.lsnpc.loot-item-card .card-header {
-    cursor: pointer;
-}
-
-.lsnpc.actor .window-content {
-    /*color: var(--primary-font);*/
-    padding: 0;
-    display: flex;
-    align-items: center;
-    /*background: var(--faintest-color);*/
-}
 .lsnpc.actor .window-content .hidden {
     display: none;
 }
-.lsnpc.actor .window-content .collapser {
-    position: relative;
-    float: left;
-    flex: none;
-    border: 1px solid var(--faint-white);
-    background: var(--safe-accent);
-    height: fit-content;
-    padding: 0.3em;
-    border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    border-left: none;
-    cursor: pointer;
-    z-index: 200;
-}
+
+/*.lsnpc.actor .window-content .collapser {*/
+/*    position: relative;*/
+/*    float: left;*/
+/*    flex: none;*/
+/*    border: 1px solid var(--faint-white);*/
+/*    background: var(--safe-accent);*/
+/*    height: fit-content;*/
+/*    padding: 0.3em;*/
+/*    border-top-right-radius: 0.5em;*/
+/*    border-bottom-right-radius: 0.5em;*/
+/*    border-left: none;*/
+/*    cursor: pointer;*/
+/*    z-index: 200;*/
+/*}*/
