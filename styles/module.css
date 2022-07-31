@@ -1,12 +1,14 @@
 .system-t2k4e .lsnpc {
     /*--check-default: url(../images/check-dark-unchecked.svg);*/
     /*--check-checked: url(../images/check-dark-checked.svg);*/
+    --background: #ece9df;
     --checkbox-font: rgba(0, 0, 0, 0.9);
     --checkbox-outline: #969696;
     --checkbox-unchecked: #D8D7D1;
     --checkbox-checked: rgba(0, 255, 0, 0.3);
     --context-outline: rgba(0, 0, 0, 0.4);
     --context-shadow: rgba(0, 0, 0, 0.65);
+    --header-background: rgba(255, 255, 255, 0.2);
     --header-border: rgba(0, 0, 0, 0.25);
     --icon-background: #ece9df;
     --icon-shadow: rgba(0, 0, 0, 0.4);
@@ -19,6 +21,7 @@
     --prepared-outline: #32cd32;
     --prepared-accent: #adff2f;
     --primary-accent: #ff6400;
+    --primary-color: rgba(0, 0, 0, 0.9);
     --secondary-color: rgba(0, 0, 0, 0.65);
     --tertiary-color: rgba(0, 0, 0, 0.4);
     --faint-white: rgba(255, 255, 255, 0.2);

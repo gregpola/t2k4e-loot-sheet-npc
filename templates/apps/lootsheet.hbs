@@ -1,5 +1,5 @@
 <form
-    class="{{cssClass}} sheetgrid {{#if actor.flags.lootsheetnpct2k4e.sheettint.style}}styled {{actor.flags.lootsheetnpct2k4e.sheettint.style}}{{/if}} {{#if actor.flags.lootsheetnpct2k4e.darkMode}}darkMode{{/if}}"
+    class="{{cssClass}} flexcol {{#if actor.flags.lootsheetnpct2k4e.sheettint.style}}styled {{actor.flags.lootsheetnpct2k4e.sheettint.style}}{{/if}} {{#if actor.flags.lootsheetnpct2k4e.darkMode}}darkMode{{/if}}"
     autocomplete="off" data-sheettint-value="{{actor.flags.lootsheetnpct2k4e.sheettint.value}}"
     data-sheettint-alpha="{{actor.flags.lootsheetnpct2k4e.sheettint.alpha}}"
     {{#if actor.flags.lootsheetnpct2k4e.sheettint.value}}
@@ -16,9 +16,11 @@
     <!-- HEADER -->
     {{> "modules/t2k4e-loot-sheet-npc/templates/partials/header.hbs"}}
 
+    <!-- TABS -->
+    {{> "modules/t2k4e-loot-sheet-npc/templates/partials/header/navigation.hbs"}}
+
     <!-- BODY -->
     {{> "modules/t2k4e-loot-sheet-npc/templates/partials/body.hbs"}}
 
     <!-- FOOTER -->
-    {{> "modules/t2k4e-loot-sheet-npc/templates/partials/footer.hbs"}}
 </form>
