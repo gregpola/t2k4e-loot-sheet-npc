@@ -1,12 +1,13 @@
 <section class="ls-gm-section permissions">
     <h3 class="gm-header">
         <i class="ra ra-key"></i> {{localize 'lsnpc.infoboxes.permissions.title'}}
-        <aside class="infobox-wrapper">
-            <i class="fas fa-info-circle help" data-theme="lsn-help"></i>
-            <div class="sheet-infobox hidden">
-                {{localize 'lsnpc.infoboxes.permissions.content'}}
-            </div>
-        </aside>
+        <div class="tooltip-container">
+            <a class="has-tooltip" href="#">
+                <span class="tooltip-wrapper">
+                    <span class="tooltip">{{localize 'lsnpc.infoboxes.permissions.content'}}</span>
+                </span>
+            </a>
+        </div>
     </h3>
     <div class="permissiongrid">
         <main class="bulk">
