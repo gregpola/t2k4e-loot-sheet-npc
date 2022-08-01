@@ -13,7 +13,7 @@
 
             <input type="checkbox" name="flags.lootsheetnpct2k4e.darkMode" class="{{#if this.token}} lsnpc-action-link{{/if}}"
                 data-target="flags.lootsheetnpct2k4e.darkMode" data-event-type="change" data-actions="sheetUpdate"
-                {{#if actor.flags.lootsheetnpct2k4e.darkMode}}checked{{/if}} />
+                {{#if actor.data.flags.lootsheetnpct2k4e.darkMode}}checked{{/if}} />
 
     </div>
 
@@ -33,7 +33,7 @@
                     </label>
                     <input type="color" data-dtype="String" class="avatar-tint-picker"
                         name="flags.lootsheetnpct2k4e.sheettint.value"
-                        value="{{actor.flags.lootsheetnpct2k4e.sheettint.value}}">
+                        value="{{actor.data.flags.lootsheetnpct2k4e.sheettint.value}}">
                 </div>
             </div>
             <div class="flexcol">
@@ -50,7 +50,7 @@
                     </label>
                     <input type="range" data-dtype="String" min="0" max="1" step="0.1" class="avatar-tint-picker"
                         name="flags.lootsheetnpct2k4e.sheettint.alpha"
-                        value="{{actor.flags.lootsheetnpct2k4e.sheettint.alpha}}">
+                        value="{{actor.data.flags.lootsheetnpct2k4e.sheettint.alpha}}">
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
                     </label>
                     <input type="color" data-dtype="String" class="avatar-tint-picker"
                         name="flags.lootsheetnpct2k4e.avatartint.value"
-                        value="{{actor.flags.lootsheetnpct2k4e.avatartint.value}}">
+                        value="{{actor.data.flags.lootsheetnpct2k4e.avatartint.value}}">
                 </div>
             </div>
             <div class="flexcol">
@@ -84,7 +84,7 @@
                     </label>
                     <input type="range" data-dtype="String" min="0" max="1" step="0.1" class="avatar-tint-picker"
                         name="flags.lootsheetnpct2k4e.avatartint.alpha"
-                        value="{{actor.flags.lootsheetnpct2k4e.avatartint.alpha}}">
+                        value="{{actor.data.flags.lootsheetnpct2k4e.avatartint.alpha}}">
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
                     </div>
                 </aside>
             </label>
-            {{#select actor.flags.lootsheetnpct2k4e.sheettint.style}}
+            {{#select actor.data.flags.lootsheetnpct2k4e.sheettint.style}}
                 <select name="flags.lootsheetnpct2k4e.sheettint.style">
                     <option value="none">None</option>
                     <option value="custom">Custom Background</option>
@@ -113,24 +113,24 @@
                 </select>
             {{/select}}
         </div>
-        {{#ifeq actor.flags.lootsheetnpct2k4e.sheettint.style 'custom'}}
+        {{#ifeq actor.data.flags.lootsheetnpct2k4e.sheettint.style 'custom'}}
             <div class="flexrow custom-background-picker">
                 <label for="flags.lootsheetnpct2k4e.custom.background">
                     <i class="fas fa-images"></i> Custom background image
                 </label>
                 <div class="flexrow">
                     <button type="button" class="file-picker" data-type="imagevideo"
-                        data-target="actor.flags.lootsheetnpct2k4e.custom.background" title="Browse Files" tabindex="-1">
+                        data-target="actor.data.flags.lootsheetnpct2k4e.custom.background" title="Browse Files" tabindex="-1">
                         <i class="fas fa-file-import fa-fw"></i>
                     </button>
                     <input class="image" type="text" name="flags.lootsheetnpct2k4e.custom.background"
-                        placeholder="File Path" value="{{actor.flags.lootsheetnpct2k4e.custom.background}}">
+                        placeholder="File Path" value="{{actor.data.flags.lootsheetnpct2k4e.custom.background}}">
                 </div>
             </div>
         {{/ifeq}}
         <div class="flexrow">
             <label>Blendmode</label>
-            {{#select actor.flags.lootsheetnpct2k4e.sheettint.blendmode}}
+            {{#select actor.data.flags.lootsheetnpct2k4e.sheettint.blendmode}}
                 <select name="flags.lootsheetnpct2k4e.sheettint.blendmode" data-event-type="change"
                     data-action="sheetUpdate">
                     <option value="difference">difference</option>
