@@ -74,11 +74,15 @@
             },
             "permissions": {
                 "title": "Permissions",
-                "content": "Ensure a character is selected for the players via the 'Player configuration'. So they are displayed here."
+                "content": "Only active players are displayed here."
+            },
+            "permissions_bulk":{
+                "title": "Bulk Update",
+                "content": "Set permissions for all actors"
             },
             "permissions_individual":{
                 "title": "Individual permissions",
-                "content": "Click on a character to to cycle the players permission. Hover to see information."
+                "content": "Click on a character to cycle the players permission."
             },
             "filter_players": {
                 "title": "Filter eligible players",

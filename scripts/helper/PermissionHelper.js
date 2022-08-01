@@ -246,7 +246,7 @@ export class PermissionHelper {
             const playersInScene = game.users.players.filter((player) => player.viewedScene == actor.parent.parent.id).map(p => p.id);
             eligables = eligables.filter(playerId => playersInScene.includes(playerId));
         }
-        console.log(`${MODULE.ns} |  \\-->  | Filtered for players that view the scene. ${eligables.length} players with eligable characters.`);
+        console.log(`${MODULE.ns} |  \\-->  | Filtered for players that view the scene. ${eligables.length} players with eligible characters.`);
         return eligables;
     }
 }
