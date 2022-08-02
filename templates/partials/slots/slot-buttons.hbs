@@ -1,13 +1,14 @@
 <div class="item-buttons">
-    {{#if isGM}}
+    {{#if user.isGM}}
         <a class="button item-edit" title="{{localize "T2K4E.ActorSheet.Edit"}}">
             {{{@root.config.Icons.buttons.edit}}}
         </a>
         <a class="button item-delete" title="{{localize "T2K4E.ActorSheet.Delete"}}">
             {{{@root.config.Icons.buttons.delete}}}
         </a>
+    {{else}}
+        <a class="button item-loot" data-action="lootItem" data-get-all="false" title="{{localize "lsnpc.buttons.loot.gear.label"}}">
+            {{{@root.config.Icons.buttons.stash}}}
+        </a>
     {{/if}}
-    <a class="button item-loot" data-action="lootItem" data-get-all="false" title="{{localize "lsnpc.buttons.loot.gear.label"}}">
-        {{{@root.config.Icons.buttons.stash}}}
-    </a>
 </div>

@@ -61,8 +61,8 @@ export class SheetListener {
     */
     _activateOwnerGMListeners(app) {
         const bulkPermissions = app.querySelectorAll('.permission-option a'),
-            individualPermissions = app.querySelectorAll('.permission-proficiency'),
-            permissionsFilter = app.querySelector('.permissions-filter');
+            individualPermissions = app.querySelectorAll('.permission-proficiency');
+            // permissionsFilter = app.querySelector('.permissions-filter');
             // priceModifierDialog = app.querySelector('.price-modifier'),
             // sheetStylings = app.querySelector('.gm-settings .sheet-style'),
             // inventorySettings = app.querySelector('.gm-settings .inventory-settings'),
@@ -76,8 +76,6 @@ export class SheetListener {
             for (let playerPermissionButton of individualPermissions) {
                 playerPermissionButton.addEventListener('click', ev => PermissionHelper.cyclePermissions(ev, this.actor));
             }
-
-            permissionsFilter.addEventListener('change', ev => this.actor.setFlag(MODULE.ns, 'permissionsFilter', ev.target.value));
         }
 
         // if (priceModifierDialog) {
