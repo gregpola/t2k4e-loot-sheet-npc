@@ -31,15 +31,6 @@
 
 }
 
-.item-loot:before{
-    content:url(../images/icons/icon-transfer.svg);
-}
-
-.app.lsnpc button i.item-loot:active {
-    cursor: grabbing;
-    /*color: var(--color-accent);*/
-}
-
 /** GM specific */
 .app.lsnpc .gm-settings .help {
     /*color: var(--primary-font);*/
