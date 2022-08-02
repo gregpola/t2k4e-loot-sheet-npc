@@ -19,6 +19,8 @@ export class HandlebarsHelper {
      */
     static register() {
 
+        Handlebars.registerHelper('isGM', () => game.user.isGM);
+
         /**
          * If a equals b
          *
