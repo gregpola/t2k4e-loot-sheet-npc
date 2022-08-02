@@ -3,10 +3,6 @@
         <img class="sheet-profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
     </div>
     <h1 class="charname">
-        {{#if isGM}}
-            <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize " Character Name"}}" />
-        {{else}}
-            {{actor.name}}
-        {{/if}}
+        <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize " Character Name"}}" />
     </h1>
 </header>
