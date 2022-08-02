@@ -31,6 +31,15 @@
 
 }
 
+.ra-hand:before{
+    content:"";
+}
+
+.app.lsnpc button i.ra-hand:active {
+    cursor: grabbing;
+    /*color: var(--color-accent);*/
+}
+
 /** GM specific */
 .app.lsnpc .gm-settings .help {
     /*color: var(--primary-font);*/
@@ -78,6 +87,7 @@ input#quantity:hover {
     border: 1px solid var(--context-outline);
     box-shadow: 0 0 8px red;
 }
+
 input#quantity:focus {
     border: 1px solid var(--context-outline);
     box-shadow: 0 0 8px red;

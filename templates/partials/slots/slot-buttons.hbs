@@ -1,5 +1,16 @@
 <div class="item-buttons">
-  <a class="button item-edit" title="{{localize "Loot"}}">
-    {{{@root.config.Icons.buttons.edit}}}
-  </a>
+    {{#if isGM}}
+        <a class="button item-edit" title="{{localize "T2K4E.ActorSheet.Edit"}}">
+            {{{@root.config.Icons.buttons.edit}}}
+        </a>
+        {{#unless data.isMounted}}
+            <a class="button item-delete" title="{{localize "T2K4E.ActorSheet.Delete"}}">
+                {{{@root.config.Icons.buttons.delete}}}
+            </a>
+        {{/unless}}
+    {{else}}
+        <a class="button item-loot ra-hand" data-action="lootItem" data-get-all="false" title="{{localize "Loot"}}">
+            {{{@root.config.Icons.buttons.remove}}}
+        </a>
+    {{/if}}
 </div>
