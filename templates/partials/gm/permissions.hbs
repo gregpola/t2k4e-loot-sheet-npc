@@ -38,18 +38,5 @@
                 {{/each}}
             </ol>
         </main>
-        <main class="filter {{#if actor.data.flags.lootsheetnpct2k4e.permissionsFilter}}filter-active{{/if}}">
-            <h4 style="margin-bottom: 0.5em">{{localize 'lsnpc.infoboxes.filter_players.title'}}
-                <i class="fas fa-info-circle" data-theme="lsn-help" title="{{localize 'lsnpc.infoboxes.filter_players.content'}}"></i>
-            </h4>
-            <select name="flags.lootsheetnpct2k4e.permissionsFilter" class="permissions-filter">
-                {{#select actor.data.flags.lootsheetnpct2k4e.permissionsFilter}}
-                    <option value="false">No Filter</option>
-                    <option value="1">Characters of Players that view the scene.</option>
-                    <option value="2">Characters of Players that have a token in the scene.</option>
-                    <option value="3"> - " - view the scene & have a token active.</option>
-                {{/select}}
-            </select>
-        </main>
     </div>
 </section>

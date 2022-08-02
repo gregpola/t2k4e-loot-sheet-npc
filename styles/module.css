@@ -31,11 +31,11 @@
 
 }
 
-.ra-hand:before{
-    content:"";
+.item-loot:before{
+    content:url(../images/icons/icon-transfer.svg);
 }
 
-.app.lsnpc button i.ra-hand:active {
+.app.lsnpc button i.item-loot:active {
     cursor: grabbing;
     /*color: var(--color-accent);*/
 }

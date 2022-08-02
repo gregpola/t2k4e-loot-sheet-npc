@@ -44,6 +44,10 @@
                         "title": "Take currency from the body",
                         "label": "Take currency"
                     }
+                },
+                "gear": {
+                    "title": "Loot this item to the actor inventory",
+                    "label": "Loot item"
                 }
 
             },
