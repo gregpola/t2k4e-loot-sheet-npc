@@ -25,10 +25,7 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
             MODULE.templatePartialsPath + "/slots/ammo-slot.hbs",
             MODULE.templatePartialsPath + "/slots/armor-slot.hbs",
             MODULE.templatePartialsPath + "/slots/gear-slot.hbs",
-            MODULE.templatePartialsPath + "/slots/slot-buttons.hbs",
-            MODULE.templatePartialsPath + "/slots/slot-buttons-gm.hbs",
             MODULE.templatePartialsPath + "/slots/vehicle-weapon-slot.hbs",
-            MODULE.templatePartialsPath + "/slots/weapon-slot.hbs",
             MODULE.templatePartialsPath + "/buttons/lootAll.hbs",
             MODULE.templatePartialsPath + "/header/navigation.hbs",
             MODULE.templatePartialsPath + "/list/" + sheetType + ".hbs",
@@ -39,6 +36,12 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
         if (game.user.isGM) {
             templateList.push(MODULE.templatePartialsPath + "/gm/gm-settings.hbs");
             templateList.push(MODULE.templatePartialsPath + "/gm/permissions.hbs");
+            templateList.push(MODULE.templatePartialsPath + "/gm/weapon-slot.hbs");
+            templateList.push(MODULE.templatePartialsPath + "/gm/slot-buttons.hbs");
+        }
+        else {
+            templateList.push(MODULE.templatePartialsPath + "/slots/weapon-slot.hbs");
+            templateList.push(MODULE.templatePartialsPath + "/slots/slot-buttons.hbs");
         }
 
         loadTemplates(templateList);
