@@ -22,7 +22,12 @@
   <div class="item-detail item-weight" title="{{localize "T2K4E.ItemSheet.Quantity"}}: {{data.qty}}">{{data.encumbrance}}</div>
 
   <div class="item-controls">
-      {{> "modules/t2k4e-loot-sheet-npc/templates/partials/slots/slot-buttons.hbs"}}
+      {{#if isGM}}
+        {{> "modules/t2k4e-loot-sheet-npc/templates/partials/slots/slot-buttons-gm.hbs"}}
+      {{else}}
+          {{> "modules/t2k4e-loot-sheet-npc/templates/partials/slots/slot-buttons.hbs"}}
+      {{/if}}
+
   </div>
   {{/with}}
 

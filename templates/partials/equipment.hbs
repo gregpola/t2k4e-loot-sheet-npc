@@ -70,9 +70,11 @@
         <h5>{{localize "T2K4E.ItemSheet.Weight"}}</h5>
       </div>
       <div class="item-controls">
-        <a class="button item-create" data-type="armor" title="{{localize "T2K4E.ActorSheet.AddArmor"}}">
-          {{{config.Icons.buttons.plus}}}
-        </a>
+        {{#if isGM}}
+            <a class="button item-create" data-type="armor" title="{{localize "T2K4E.ActorSheet.AddArmor"}}">
+              {{{config.Icons.buttons.plus}}}
+            </a>
+        {{/if}}
       </div>
     </div>
     <div class="items-list">
@@ -94,9 +96,11 @@
         <h5>{{localize "T2K4E.ItemSheet.Weight"}}</h5>
       </div>
       <div class="item-controls">
-        <a class="button item-create" data-type="gear" title="{{localize "T2K4E.ActorSheet.AddGear"}}">
-          {{{config.Icons.buttons.plus}}}
-        </a>
+        {{#if isGM}}
+            <a class="button item-create" data-type="gear" title="{{localize "T2K4E.ActorSheet.AddGear"}}">
+              {{{config.Icons.buttons.plus}}}
+            </a>
+        {{/if}}
       </div>
     </div>
     <div class="items-list">
@@ -118,9 +122,11 @@
         <h5>{{localize "T2K4E.ItemSheet.Weight"}}</h5>
       </div>
       <div class="item-controls">
-        <a class="button item-create" data-type="ammunition" title="{{localize "T2K4E.ActorSheet.AddAmmo"}}">
-          {{{config.Icons.buttons.plus}}}
-        </a>
+        {{#if isGM}}
+            <a class="button item-create" data-type="ammunition" title="{{localize "T2K4E.ActorSheet.AddAmmo"}}">
+              {{{config.Icons.buttons.plus}}}
+            </a>
+        {{/if}}
       </div>
     </div>
     <div class="items-list">
