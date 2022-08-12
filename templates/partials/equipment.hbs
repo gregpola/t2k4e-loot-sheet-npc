@@ -44,20 +44,11 @@
 
     <div class="items-list">
       {{#each actor.itemTypes.weapon}}
-          {{#if isGM}}
-              {{> "modules/t2k4e-loot-sheet-npc/templates/partials/gm/weapon-slot.hbs" this}}
-          {{else}}
-              {{> "modules/t2k4e-loot-sheet-npc/templates/partials/slots/weapon-slot.hbs" this}}
-          {{/if}}
-      {{else}}
+          {{> "modules/t2k4e-loot-sheet-npc/templates/partials/slots/weapon-slot.hbs" this}}
       <div class="item">–</div>
       {{/each}}
       {{#each actor.itemTypes.grenade}}
-          {{#if isGM}}
-              {{> "modules/t2k4e-loot-sheet-npc/templates/partials/gm/weapon-slot.hbs" this}}
-          {{else}}
-              {{> "modules/t2k4e-loot-sheet-npc/templates/partials/slots/weapon-slot.hbs" this}}
-          {{/if}}
+          {{> "modules/t2k4e-loot-sheet-npc/templates/partials/slots/weapon-slot.hbs" this}}
       {{/each}}
     </div>
   </div>
