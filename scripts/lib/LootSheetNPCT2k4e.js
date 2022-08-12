@@ -26,6 +26,7 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
             MODULE.templatePartialsPath + "/slots/armor-slot.hbs",
             MODULE.templatePartialsPath + "/slots/gear-slot.hbs",
             MODULE.templatePartialsPath + "/slots/slot-buttons.hbs",
+            MODULE.templatePartialsPath + "/slots/slot-buttons-gm.hbs",
             MODULE.templatePartialsPath + "/slots/vehicle-weapon-slot.hbs",
             MODULE.templatePartialsPath + "/slots/weapon-slot.hbs",
             MODULE.templatePartialsPath + "/buttons/lootAll.hbs",
