@@ -42,11 +42,15 @@ export class SheetListener {
         // tooltipListener.helperTooltips();
         // tooltipListener.miscTooltips();
 
+        // TODO figure out where this came from
         for (let actionButton of sheetActionButtons) {
             const eventType = actionButton.nodeName === 'SELECT' ? 'change' : 'click';
             actionButton.toggleAttribute('disabled', false);
             actionButton.addEventListener(eventType, ev => LootSheetNPCHelper.sendActionToSocket(this.actor, ev));
         }
+
+        // activate the loot item button
+        //html.find('.item-loot').click(this._onItemLoot.bind(this));
 
         for (let helpText of helpTexts) {
             helpText.addEventListener('hover', ev => SheetHelper.toggleHelp(ev));
@@ -126,6 +130,20 @@ export class SheetListener {
             stack: event.type === 'click' ? false : true
         };
         this._tradeItemStagingHandler(data, event);
+    }
+
+    /**
+     * Handles the item loot button.
+     *
+     * @param event
+     * @returns {*}
+     * @private
+     */
+    _onItemLoot(event) {
+        event.preventDefault();
+        const elem = event.currentTarget;
+        const itemId = elem.closest('.item').dataset.itemId;
+        return this.actor.deleteEmbeddedDocuments('Item', [itemId]);
     }
 
     /**
