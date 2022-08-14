@@ -63,7 +63,7 @@ export class ChatHelper {
             flags: (source.collectionName == 'tokens') ? source.actor.data.flags : source.data.flags,
             items: chatItems,
             type: options.type,
-            actionMessage: game.i18n.format('lsnpc.chatActionMessages.' + options.type, { source: source.name, destination: destination.name })
+            actionMessage: game.i18n.format('lsnpc.chatActionMessages.' + options.type, { source: source.name })
         };
 
         if (options.verbose) {

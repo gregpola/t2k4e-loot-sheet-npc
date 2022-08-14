@@ -43,13 +43,14 @@
     </div>
 
     <div class="items-list">
-      {{#each actor.itemTypes.weapon}}
-          {{> "modules/t2k4e-loot-sheet-npc/templates/partials/slots/weapon-slot.hbs" this}}
-      <div class="item">–</div>
-      {{/each}}
-      {{#each actor.itemTypes.grenade}}
-          {{> "modules/t2k4e-loot-sheet-npc/templates/partials/slots/weapon-slot.hbs" this}}
-      {{/each}}
+        {{#each actor.itemTypes.weapon}}
+            {{> "systems/t2k4e-loot-sheet-npc/templates/partials/slots/weapon-slot.hbs" this}}
+        {{else}}
+            <div class="item">–</div>
+        {{/each}}
+        {{#each actor.itemTypes.grenade}}
+            {{> "systems/t2k4e-loot-sheet-npc/templates/partials/slots/weapon-slot.hbs" this}}
+        {{/each}}
     </div>
   </div>
 
