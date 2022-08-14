@@ -69,7 +69,7 @@ class ItemHelper {
                 continue;
             }
             const quantity = (sourceItem.data.data.qty < item.data.data.quantity) ? parseInt(sourceItem.data.data.qty) : parseInt(item.data.data.quantity),
-                updatedItem = { _id: sourceItem.id, data: { quantity: sourceItem.data.data.qty - quantity } },
+                updatedItem = { _id: sourceItem.id, data: { qty: sourceItem.data.data.qty - quantity } },
                 targetItem = destination.getEmbeddedCollection('Item').find(i =>
                     sourceItem.name === i.name
                     && sourceItem.data.data.price === i.data.data.price
@@ -88,7 +88,7 @@ class ItemHelper {
                 destinationAdditions.push(newItem);
             }
 
-            if (updatedItem.data.quantity === 0) {
+            if (updatedItem.data.qty === 0) {
                 sourceDeletes.push(sourceItem.id);
             } else {
                 sourceUpdates.push(updatedItem);
