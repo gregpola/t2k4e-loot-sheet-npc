@@ -53,7 +53,7 @@ export class TradeHelper {
      * @inheritdoc
      */
     static async lootItems(source, destination, items, options) {
-        let movedItems = ItemHelper.moveItemsToDestination(source, destination, items);
+        let movedItems = await ItemHelper.moveItemsToDestination(source, destination, items);
         ChatHelper.tradeChatMessage(source, destination, movedItems, options);
 
     }

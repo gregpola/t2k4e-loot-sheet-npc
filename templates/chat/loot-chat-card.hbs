@@ -1,0 +1,44 @@
+<div class="t2k4e lsnpc chat-card"
+    data-actor-id="{{destination.id}}"
+    data-lootsheet-loot-id="{{destination.data._id}}-{{type}}-{{sourceId}}"
+    style="
+        --sheettint: {{hexToRGB flags.lootsheetnpct2k4e.sheettint.value flags.lootsheetnpct2k4e.sheettint.alpha}};
+        --avatartint: {{hexToRGB flags.lootsheetnpct2k4e.avatartint.value flags.lootsheetnpct2k4e.avatartint.alpha}};
+        --blendmode: {{flags.lootsheetnpct2k4e.sheettint.blendmode}};
+        --style: {{flags.lootsheetnpct2k4e.sheettint.style}};">
+
+    <div class="loot-info flexrow" style="align-items: center; justify-content: center;">
+        <a class="lsnpc-document-link" draggable="true" data-entity="Actor" data-uuid="{{destination.uuid}}">
+            <img src="{{destination.data.img}}" class="looter-icon character-icon" title="{{destination.name}}">
+        </a>
+        <span class="action-message"> {{actionMessage}} </span>
+        <a class="lsnpc-document-link" draggable="true" data-entity="Actor" data-uuid="{{source.uuid}}">
+            <img src="{{source.data.img}}" class="looter-icon npc-icon" title="{{source.data.name}}">
+        </a>
+    </div>
+
+    <header class="card-header flexrow">
+        <span class="item-name"> ↕ Toggle Details ↕ </span>
+    </header>
+
+    <div class="card-content" style="display:none">
+        <ol class="loot-results item-list">
+            {{#each items as |item|}}
+                <li class="table-result item flexrow">
+                    <div class="item-quantity">
+                        <strong>{{item.data.quantity}}&nbsp; &#xD7;</strong>
+                    </div>
+                    <a class="item-link lsnpc-document-link" draggable="true"
+                            data-entity="{{item.data.documentName}}"
+                            data-id="{{item.data.id}}"
+                            data-uuid="{{item.data.uuid}}">
+                        <img class="item-image" src="{{item.data.img}}" />
+                        <div class="item-name">
+                            {{{item.data.name}}}
+                        </div>
+                    </a>
+                </li>
+            {{/each}}
+        </ol>
+    </div>
+</div>

@@ -57,7 +57,6 @@ export class ChatHelper {
     static async _renderInnerLootChatMessage(source, destination, chatItems, options = { type: 'loot', verbose: true }) {
         const messageData = {
             templatePath: MODULE.templatePath,
-            colorRarity: game.settings.get(MODULE.ns, "colorRarity"),
             source: source,
             sourceId: (source.isLinked) ? source.data_id : source.id,
             destination: destination,

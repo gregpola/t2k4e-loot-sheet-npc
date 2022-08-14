@@ -5,12 +5,12 @@ import { MODULE } from '../moduleConstants.js';
 class ItemHelper {
 
     /**
-    * Take an options object and either keep values or set the default
-    *
-    * @param {object} options
-    * @returns {object}
-    *
-    */
+     * Take an options object and either keep values or set the default
+     *
+     * @param {object} options
+     * @returns {object}
+     *
+     */
     static _getOptionsDefault(options = {}) {
         return {
             breakableRarities: options?.breakableRarities || ['none', 'common'],
@@ -63,14 +63,14 @@ class ItemHelper {
          *  when items is only one item.
          **/
         for (let item of items) {
-            const sourceItem = source.getEmbeddedDocument("ItemT2K", item.id);
+            const sourceItem = source.getEmbeddedDocument("Item", item.id);
             if(!sourceItem){
                 ui.notifications.info(`${source.name} does not possess this ${item.name} anymore.`);
                 continue;
             }
-            const quantity = (sourceItem.data.data.quantity < item.data.data.quantity) ? parseInt(sourceItem.data.data.quantity) : parseInt(item.data.data.quantity),
-                updatedItem = { _id: sourceItem.id, data: { quantity: sourceItem.data.data.quantity - quantity } },
-                targetItem = destination.getEmbeddedCollection('ItemT2K').find(i =>
+            const quantity = (sourceItem.data.data.qty < item.data.data.quantity) ? parseInt(sourceItem.data.data.qty) : parseInt(item.data.data.quantity),
+                updatedItem = { _id: sourceItem.id, data: { quantity: sourceItem.data.data.qty - quantity } },
+                targetItem = destination.getEmbeddedCollection('Item').find(i =>
                     sourceItem.name === i.name
                     && sourceItem.data.data.price === i.data.data.price
                     && sourceItem.data.data.weight === i.data.data.weight
@@ -107,7 +107,7 @@ class ItemHelper {
     }
 
     /**
-     * @param {Array<object>} items items to be filtered for lootable items 
+     * @param {Array<object>} items items to be filtered for lootable items
      *
      * @returns {Array<Items>} all lootable items of the given items
      */
@@ -127,8 +127,8 @@ class ItemHelper {
                 }
 
                 if (options?.filterNaturalWeapons) {
-                    if (item.type == 'weapon') {  
-                        const filteredWeaponTypes = ['natural'];  
+                    if (item.type == 'weapon') {
+                        const filteredWeaponTypes = ['natural'];
 
                         return !filteredWeaponTypes.includes(item.data.weaponType);
                     }
@@ -162,21 +162,21 @@ class ItemHelper {
      *
      * @param {ActorT2K} actor
      * @param {object} items
-     * @param {Array<ItemT2K>} updatedItems
+     * @param {Array<Item>} updatedItems
      *
      * @returns {Promise<void>}
      */
     static async _updateActorInventory(actor, items, updatedItems) {
         if (items.data.length > 0) {
             if (items.type === 'create') {
-                return actor.createEmbeddedDocuments("ItemT2K", items.data);
+                return actor.createEmbeddedDocuments("Item", items.data);
             } else if (items.type === 'delete') {
-                return actor.deleteEmbeddedDocuments("ItemT2K", items.data);
+                return actor.deleteEmbeddedDocuments("Item", items.data);
             }
         }
 
         if (updatedItems.length > 0)
-            return actor.updateEmbeddedDocuments("ItemT2K", updatedItems);
+            return actor.updateEmbeddedDocuments("Item", updatedItems);
     }
 
     /**
@@ -207,8 +207,8 @@ class ItemHelper {
      *  * checks the given or default conversions
      *  * If conversions are given for the itemType replace the given properties accordingly
      *
-     * @param {ItemT2K} itemData ~ {ItemT2K}.data
-     * @param {string} itemType ~ {ItemT2K}.documentName
+     * @param {Item} itemData ~ {Item}.data
+     * @param {string} itemType ~ {Item}.documentName
      * @param {object} conversions
      * @returns
      */

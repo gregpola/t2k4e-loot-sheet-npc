@@ -7,6 +7,7 @@
   "manifestPlusVersion": "1.2.0",
   "minimumCoreVersion": "0.9.0",
   "compatibleCoreVersion": "9.269",
+  "socket": true,
   "authors": [
     {
       "name": "Greg Pola | Trazzm",
