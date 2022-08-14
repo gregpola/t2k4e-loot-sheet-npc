@@ -79,11 +79,11 @@ class ItemHelper {
             let newItem = {};
 
             if (targetItem) {
-                let targetUpdate = { _id: targetItem.id, data: { quantity: parseInt(targetItem.data.data.quantity + quantity) } };
+                let targetUpdate = { _id: targetItem.id, data: { qty: parseInt(targetItem.data.data.qty + quantity) } };
                 destinationUpdates.push(targetUpdate);
             } else {
                 newItem = duplicate(sourceItem);
-                newItem.data.quantity = parseInt(quantity);
+                newItem.data.qty = parseInt(quantity);
                 newItem.data.equipped = false;
                 destinationAdditions.push(newItem);
             }

@@ -133,8 +133,8 @@ export class TradeHelper {
         let moved = false;
         quantity = (soldItem.data.data.quantity < quantity) ? parseInt(soldItem.data.data.quantity) : parseInt(quantity);
 
-        let successfullTransaction = this._updateFunds(seller, buyer, soldItem.data.data.price);
-        if (!successfullTransaction) return false;
+        let successfulTransaction = this._updateFunds(seller, buyer, soldItem.data.data.price);
+        if (!successfulTransaction) return false;
         moved = ItemHelper.moveItemsToDestination(seller, buyer, [{ id: itemId, data: { data: { quantity: quantity } } }]);
 
         options.type = "buy";

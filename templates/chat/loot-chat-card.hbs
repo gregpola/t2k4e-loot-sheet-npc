@@ -7,8 +7,8 @@
              --blendmode: {{flags.lootsheetnpc5e.sheettint.blendmode}};
              --style: {{flags.lootsheetnpc5e.sheettint.style}};">
     <div class="loot-info flexrow">
-        <span class="action-message"> {{actionMessage}} </span>
-        <a class="lsnpc-document-link" draggable="true" data-entity="Actor" data-uuid="{{source.uuid}}">
+        <span class="action-message" style="flex: 1; flex-basis: 80%"> {{actionMessage}} </span>
+        <a class="lsnpc-document-link" draggable="false" data-entity="Actor" data-uuid="{{source.uuid}}">
             <img src="{{source.data.img}}" class="npc-icon" title="{{source.data.name}}" style="width: 24px; height:24px;">
         </a>
     </div>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="card-name">{{item.data.name}}</div>
                     <div class="card-image">
-                        <img src="{{item.data.img}}" alt="{{name}}" style="width: 24px; height:24px;"/>
+                        <img src="{{item.data.img}}" alt="{{name}}"/>
                     </div>
                 </li>
             {{/each}}
