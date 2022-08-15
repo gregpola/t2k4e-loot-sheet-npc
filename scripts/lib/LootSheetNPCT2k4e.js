@@ -47,14 +47,6 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
         return MODULE.templateAppsPath + "/lootsheet.hbs";
     }
 
-    // static get defaultOptions() {
-    //     return foundry.utils.mergeObject(super.defaultOptions, {
-    //         classes: ['t2k4e', 'sheet', 'actor', 'character'],
-    //         width: 550,
-    //         height: 715,
-    //     });
-    // }
-
     static get defaultOptions() {
         const options = super.defaultOptions;
 
@@ -98,11 +90,6 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
         context.isToken = (this?.token) ? true : false;
         context.items = sheetDataActorItems;
         context.interactingActor = game.user?.character?.name || "No Character selected";
-        // if (game.user?.character?.data?.data?.currency) {
-        //     context.interactingActorFunds = {currency: CurrencyHelper.cleanCurrency(game.user?.character?.data?.data?.currency)};
-        // } else {
-        //     context.interactingActorFunds = {currency: [] };
-        // }
         context.totalItems = sheetDataActorItems.length;
         context.totalWeight = totals.weight.toLocaleString('en');
         context.totalPrice = totals.price.toLocaleString('en') + " ammo";
