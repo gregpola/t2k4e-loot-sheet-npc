@@ -1,13 +1,13 @@
 <article class="tab" data-tab="misc" data-group="ws-sections">
-    <h1>LootsheetNPCT2k4e <em><small>v0.1.0</small></em></h1>
-    <h2>Thank you for using 📜LootsheetNPCt2k4e! 🤗</h2>
-    <p>The module was was installed or updated.</p>
+    <h1>{{localize "lsnpc.moduleTitle"}} <em><small>{{localize "lsnpc.welcomeScreen.latest.content"}}</small></em></h1>
+    <p>{{localize "lsnpc.welcomeScreen.installed-or-updated"}}</p>
+    <hr />
     <div class="hideinfo">
-        <label for="welcome-screen-show-again">Don't show this screen again until next update.</label>
+        <label for="welcome-screen-show-again">{{localize "lsnpc.welcomeScreen.dont-show-again"}}</label>
         <input type="checkbox" class='show-again' id="welcome-screen-show-again" {{checked isChecked}} />
     </div>    
     <hr />
-    <h2>Latest Patch 0.1.0</h2>
+    <h2>{{localize "lsnpc.welcomeScreen.latest.title"}} {{localize "lsnpc.welcomeScreen.latest.content"}}</h2>
 <!--    <ul>-->
 <!--        <li>Feature <a href="https://github.com/jopeek/fvtt-loot-sheet-npc-5e/issues/337">buy/sell modifier #337</a></li>-->
 <!--        <li>Sheet dark mode as default</li>-->
@@ -19,35 +19,19 @@
 <!--        <li>🪛 fixed <a href="https://github.com/jopeek/fvtt-loot-sheet-npc-5e/issues/348">chat log price #348</a></li>-->
 <!--    </ul>-->
 <!--    <hr />-->
-    <h3>Bugs or suggestions 🐛🔧 </h3>
-    <p>
-        If you encounter any bugs or if you have feature ideas. Feel free to contact us.
-        When creating bug reports it is often useful to paste the output or screenhots of the browser console.
-        If the bug generates any errors/warnings.
-    </p>
-    
+    <h3>{{localize "lsnpc.welcomeScreen.bugs.title"}} 🐛🔧 </h3>
+    <p>{{localize "lsnpc.welcomeScreen.bugs.content"}}</p>
     <ul>
-        <li>Via the <a href="https://github.com/gregpola/t2k4e-loot-sheet-npc/issues">issues</a> section on the
-            <a href="https://github.com/gregpola/t2k4e-loot-sheet-npc">
-                <iclass="fab fa-github"></i> github repository
-            </a>.
+        <li>
+            <a href="https://github.com/gregpola/t2k4e-loot-sheet-npc/issues"></a>
         </li>
-        <li>On the FoundryVTT Discord <a href="https://discord.gg/foundryvtt"><i class="fas fa-dice-d20"></i><i
-                    class="fab fa-discord"></i></a>.</li>
     </ul>
-    <h3>Authors / Maintainers / Contributers</h3>
+    <h3>{{localize "lsnpc.welcomeScreen.contribs.title"}}</h3>
     <table>
         <thead>
             <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Contacts
-                </th>
-                <th>
-                    TipJar
-                </th>
+                <th>{{localize "lsnpc.welcomeScreen.contribs.header.name"}}</th>
+                <th>{{localize "lsnpc.welcomeScreen.contribs.header.contact"}}</th>
             </tr>
         </thead>
         <tbody>
@@ -65,11 +49,6 @@
             </tr>
         </tbody>
         <tfoot>
-            <tr>
-                <td colspan="3">
-                    <small>If you are a contributor and wish to appear in this list. Please contact us.</small>
-                </td>
-            </tr>
         </tfoot>
     </table>    
 </article>

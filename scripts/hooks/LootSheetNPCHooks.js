@@ -21,6 +21,7 @@ import { ChatListener } from './ChatListener.js';
  *
  */
 export class LootsheetNPCHooks {
+
     /**
      * Hooks on game hooks and attaches methods
      */
@@ -34,6 +35,19 @@ export class LootsheetNPCHooks {
         Hooks.on('getSceneControlButtons', this.attachSceneControlButtons);
         Hooks.on('renderTokenHUD', this.attachTokenHudButtons);
         Hooks.on("renderChatMessage", (_, jq) => ChatListener.refresh(jq[0]));
+        Hooks.on('dropActorSheetData', this.dropActorSheetData);
+    }
+
+    /**
+     * Deny dragging items from the sheet.
+     *
+     * @param {Actor} actor      The Actor
+     * @param {ActorSheet} sheet The ActorSheet application
+     * @param {object} data      The data that has been dropped onto the sheet
+     * @returns {boolean}
+     */
+    static dropActorSheetData(actor, sheet, data) {
+        return false;
     }
 
     static foundrySetup() {

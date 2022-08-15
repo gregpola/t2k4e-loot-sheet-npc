@@ -71,6 +71,24 @@
         "defaults": {
 
         },
+        "welcomeScreen": {
+            "patch-notes": "Patch Notes",
+            "installed-or-updated": "The module was installed or updated.",
+            "dont-show-again": "Don't show this screen again until next update.",
+            "latest": {
+                "title": "Patch Notes",
+                "content": "0.1.0"
+            },
+            "bugs": {
+                "title": "Bugs or suggestions",
+                "content": "If you find any bugs or have feature requests, please contact us! Please include screenshot(s) and steps to reproduce on any bug reports."
+            },
+            "contribs": {
+                "title": "Developers:",
+                "header.name": "Name",
+                "header.contact": "Contact"
+            }
+        },
         "infoboxes": {
             "lootsheettype": {
                 "title": "Sheet type",
