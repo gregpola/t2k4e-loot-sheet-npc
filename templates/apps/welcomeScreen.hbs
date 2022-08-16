@@ -45,15 +45,11 @@
 </style>
 
 <nav class="tabs" data-group="ws-sections">
-    <a class="item active" data-tab="misc"><i class="fas fa-cog"></i> Hi {{game.user.name}}</a>
-    <a class="item" data-tab="loot"><i class="ra ra-diamond"></i> Loot</a>
-<!--    <a class="item" data-tab="merchant"><i class="fas fa-dice-d20"></i> Merchant</a>-->
+    <a class="item active" data-tab="misc"><i class="fas fa-cog"></i>Hi {{game.user.name}}</a>
     <a class="item" data-tab="patchnotes"><i class="fas fa-filter"></i>{{localize "lsnpc.welcomeScreen.patch-notes"}}</a>
 </nav>
+
 <section class="content">
     {{> 'modules/t2k4e-loot-sheet-npc/templates/partials/welcomeScreen/misc.hbs' }}
-    {{> 'modules/t2k4e-loot-sheet-npc/templates/partials/welcomeScreen/loot.hbs' }}
     {{> 'modules/t2k4e-loot-sheet-npc/templates/partials/welcomeScreen/patchnotes.hbs' }}
 </section>
-
-

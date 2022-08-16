@@ -87,6 +87,12 @@
                 "title": "Developers:",
                 "header.name": "Name",
                 "header.contact": "Contact"
+            },
+            "patch": {
+                "0.1.0": {
+                    "title": "v0.1.0",
+                    "0": "Initial release"
+                }
             }
         },
         "infoboxes": {
