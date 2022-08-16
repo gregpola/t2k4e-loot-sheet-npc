@@ -16,7 +16,7 @@
             },
             "2": {
                 "title": "Observer",
-                "desc": "Can view and interact (loot/buy/sell) with the sheet.<br />The possible interactions depend on the sheet's type and settings."
+                "desc": "Can view and interact with the sheet.<br />The possible interactions depend on the sheet's type and settings."
             },
             "3": {
                 "title": "Owner",

@@ -1,4 +1,4 @@
-[![Github All Releases](https://img.shields.io/github/downloads/gregpola/fvtt-loot-sheet-t2k4e/total.svg)]() 
+[![Github All Releases](https://img.shields.io/github/downloads/gregpola/t2k4e-loot-sheet-npc/total.svg)]() 
 <!-- [![Donate](https://img.shields.io/badge/Donate-BuyMeACoffee-green.svg)](https://www.buymeacoffee.com/ChalkOne) -->
 # T2K4E Loot Sheet NPC
 
@@ -10,38 +10,27 @@ This version is based from jopeek's module for DND5E (https://github.com/jopeek/
 
 ### Features
 
-Allows for easy assembly of items and money to be distributed to players.
+Allows for easy assembly of items to be distributed to players.
 
 More features detailed below.
 
-##### Permissions
-Permissions can be set in the sheet for each player and range from no access (cannot open sheet) to observer (view sheet and contents and utilize loot or buy buttons) to owner (view sheet and add/remove items and configure sheet).
+#### Permissions
+Permissions can be set in the sheet for each player and range from no access (cannot open sheet) or observer (view sheet and contents and utilize loot buttons).
 
-[//]: # (TODO Update image)
-![demo_permissions](https://thumbs.gfycat.com/CaringWildKoi-size_restricted.gif)
+[//]: # (Permissions Tab)
+![demo_permissions](images/permissions.webp)
 
-[//]: # (##### Shopkeeper Sheet)
+#### Looting
+Players given Observer permission are allowed to freely loot from loot sheet NPC. All items looted are displayed in the chat.
 
-[//]: # (Can be used to create an inventory of a shopkeeper to allow players to peruse their inventory. Prices are listed next to each item.)
+[//]: # (Gear Tab)
+![demo_looting](images/looting.webp)
 
-[//]: # ()
-[//]: # (![demo_inventory]&#40;https://raw.githubusercontent.com/gregpola/fvtt-loot-sheet-t2k4e/main/images/demo_inventory.jpg&#41;)
-
-[//]: # (##### Price Modifier)
-
-[//]: # (Prices can be adjusted by percentage for all owned items.)
-
-[//]: # ()
-[//]: # (![price_modifier]&#40;https://thumbs.gfycat.com/WelloffFortunateInganue-size_restricted.gif&#41;)
-
-[//]: # ()
-[//]: # (A Biography tab is also available.)
-
-[//]: # ()
-[//]: # (![demo_biography]&#40;https://raw.githubusercontent.com/gregpola/fvtt-loot-sheet-y2k4e/master/images/demo_biography.jpg&#41;)
+#### Macros
+There is a macro compendium included with macros that will convert selected tokens to a loot sheet and back to default.
 
 ### Compatibility:
-- Tested with FVTT v9 and the T2K4E system v1.1.1 only.
+- Tested with FVTT v9 and the T2K4E system v2.3.0 only.
 
 ### Installation Instructions
 
