@@ -15,20 +15,119 @@ import { LootProcessor } from './lib/LootProcessor.js';
 class API {
 
     /**
-   * @title Converts the provided token to a lootable sheet
-   *
-   * @note titleAdapted from dfreds pocketChange Module
-   * Originally adappted from the convert-to-lootable.js by @unsoluble, @Akaito, @honeybadger, @kekilla, and @cole.
-   *
-   * @module lootsheetnpct2k4e.API.convertToken
-   *
-   * @param {object} options
-   * @param {Token} token - the token to convert
-   * @param {string} type Type of Lootsheet
-   * @param {number} options.chanceOfDamagedItems - (optional) the chance an item is considered damaged from 0 to 1. Uses the setting if undefined
-   * @param {number} options.damagedItemsMultiplier - (optional) the amount to reduce the value of a damaged item by. Uses the setting if undefined
-   * @param {boolean} options.removeDamagedItems - (optional) if true, removes items that are damaged
-   */
+     * @title resetTokens()
+     * @description Convert a stack of Tokens back to the default
+     * @module lootsheetnpct2k4e.API.resetTokens
+     *
+     * @param {Array<Token>} tokens Array of ActorTokens
+     * @param {boolean} log verbose
+     * @returns {object}
+     */
+    static async resetTokens(
+        tokens,
+        verbose = false ) {
+        const tokenstack = (tokens) ? (tokens.length > 0) ? tokens : [tokens] : canvas.tokens.controlled;
+
+        let response = API._response(200, 'success');
+
+        for (let token of tokenstack) {
+            response.data[token.uuid] = await API.resetToken(token, verbose)
+        }
+
+        if (verbose) API._verbose(response);
+        return response;
+    }
+
+    /**
+     * Reset the given token back to the default npc actor sheet
+     * @param token
+     * @param verbose
+     * @returns {Promise<{msg: string, code, data: {}, error: boolean}>}
+     */
+    static async resetToken(
+        token = canvas.tokens.controlled[0],
+        verbose = false ) {
+        let response = API._response(200, 'success');
+        if (!token) {
+            response.code = 403;
+            response.msg = 'No token selected or supplied';
+            response.error = true;
+            if (verbose) API._verbose(response);
+            return response;
+        }
+
+        if (!game.user.isGM) return;
+        if (!token.actor.sheet) return;
+
+        const sheet = token.actor.sheet,
+            priorState = sheet._state; // -1 for opened before but now closed, // 0 for closed and never opened // 1 for currently open
+
+        let newActorData = {
+            flags: {
+                core: {
+                    sheetClass: 't2k4e.ActorSheetT2KCharacter',
+                }
+            }
+        };
+
+        // Close the old sheet if it's open
+        await sheet.close();
+
+        newActorData.items = LootSheetNPCHelper.getLootableItems(
+            token.actor.items,
+            {}
+        );
+
+        // Delete all items first
+        await token.document.actor.deleteEmbeddedDocuments(
+            'Item',
+            Array.from(token.actor.items.keys())
+        );
+
+        // Update actor with the new sheet and items
+        await token.document.actor.update(newActorData);
+
+        // Update the document with the overlay icon and new permissions
+        await token.document.update({
+            overlayEffect: '',
+            vision: false,
+            actorData: {
+                actor: {
+                },
+                permission: PermissionHelper._updatedUserPermissions(token, 0),
+            },
+        });
+
+        // Deregister the old sheet class
+        token.actor._sheet = null;
+        delete token.actor.apps[sheet.appId];
+
+        if (priorState > 0) {
+            // Re-draw the updated sheet if it was open
+            token.actor.sheet.render(true);
+        }
+
+        response.data = token;
+        if (verbose) API._verbose(response);
+        return response;
+    }
+
+
+    /**
+     * @title Converts the provided token to a lootable sheet
+     *
+     * @note titleAdapted from dfreds pocketChange Module
+     * Originally adappted from the convert-to-lootable.js by @unsoluble, @Akaito, @honeybadger, @kekilla, and @cole.
+     *
+     * @module lootsheetnpct2k4e.API.convertToken
+     *
+     * @param {object} options
+     * @param {Token} token - the token to convert
+     * @param {string} type Type of Lootsheet
+     * @param {number} options.chanceOfDamagedItems - (optional) the chance an item is considered damaged from 0 to 1. Uses the setting if undefined
+     * @param {number} options.damagedItemsMultiplier - (optional) the amount to reduce the value of a damaged item by. Uses the setting if undefined
+     * @param {boolean} options.removeDamagedItems - (optional) if true, removes items that are damaged
+     */
     static async convertToken(
         token = canvas.tokens.controlled[0],
         type = 'loot',
@@ -55,7 +154,7 @@ class API {
         let newActorData = {
             flags: {
                 core: {
-                    sheetClass: 'LootSheetNPCT2k4e',
+                    sheetClass: 't2k4e.LootSheetNPCT2k4e',
                 },
                 lootsheetnpct2k4e: {
                     lootsheettype: 'Loot',
@@ -199,8 +298,8 @@ class API {
             responseData = {};
 
         for (let token of tokenstack) {
-            if (!token.actor || token.actor.hasPlayerOwner) continue;      
-            token.actor.data.permission = PermissionHelper._updatedUserPermissions(token, CONST.DOCUMENT_PERMISSION_LEVELS.OBSERVER, players);  
+            if (!token.actor || token.actor.hasPlayerOwner) continue;
+            token.actor.data.permission = PermissionHelper._updatedUserPermissions(token, CONST.DOCUMENT_PERMISSION_LEVELS.OBSERVER, players);
             await token.document.update({actor: {data: {permission: token.actor.data.permission}}});
         }
 
