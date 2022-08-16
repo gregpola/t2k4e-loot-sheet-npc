@@ -72,6 +72,7 @@
 
         },
         "welcomeScreen": {
+            "welcome": "Welcome",
             "patch-notes": "Patch Notes",
             "installed-or-updated": "The module was installed or updated.",
             "dont-show-again": "Don't show this screen again until next update.",
