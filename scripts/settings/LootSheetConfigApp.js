@@ -59,11 +59,11 @@ export class LootSheetSettingsConfigApp extends FormApplication {
         //   i18nName: game.i18n.localize('lsnpc.settings.menu.ui'),
         //   class: "fas fa-bag", menus: [], settings: []
         // },
-        {
-          name: MODULE.settings.groups.sheet.loot,
-          i18nName: game.i18n.localize('lsnpc.settings.menu.loot'),
-          class: "fab fa-grunt", menus: [], settings: []
-        }
+        // {
+        //   name: MODULE.settings.groups.sheet.loot,
+        //   i18nName: game.i18n.localize('lsnpc.settings.menu.loot'),
+        //   class: "fab fa-grunt", menus: [], settings: []
+        // }
         // {
         //   name: MODULE.settings.groups.sheet.merchant,
         //   i18nName: `${game.i18n.localize('lsnpc.settings.menu.merchant')}`,
@@ -90,8 +90,8 @@ export class LootSheetSettingsConfigApp extends FormApplication {
     }
 
     super.activateListeners(html);
-    this.onEntityClick(this.app);
-    this.onActionClick(this.app);
+    await this.onEntityClick(this.app);
+    await this.onActionClick(this.app);
 
     html.find('.submenu button').click(this._onClickSubmenu.bind(this));
     //html.find('.actions button').click(this._onClickAction.bind(this));
@@ -175,7 +175,7 @@ export class LootSheetSettingsConfigApp extends FormApplication {
      * */
     const targets = Object.keys(formData).filter(key => typeof formData[key] === 'object');
     for (let target of targets) {
-      if (formData[target].name.length != 0) {
+      if (formData[target].name.length !== 0) {
         let newObject = formData[target],
           currentObject = game.settings.get(MODULE.ns, target),
           key = newObject.name + '_' + newObject.rolltable + '_' + Math.random(),

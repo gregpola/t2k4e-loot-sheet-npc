@@ -71,29 +71,17 @@
         "defaults": {
 
         },
-        "welcomeScreen": {
-            "welcome": "Welcome",
-            "patch-notes": "Patch Notes",
-            "installed-or-updated": "The module was installed or updated.",
-            "dont-show-again": "Don't show this screen again until next update.",
-            "latest": {
-                "title": "Patch Notes",
-                "content": "0.1.0"
-            },
+        "about": {
+            "readme": "More Info",
+            "changelog": "Change Log",
             "bugs": {
                 "title": "Bugs or suggestions",
                 "content": "If you find any bugs or have feature requests, please contact us! Please include screenshot(s) and steps to reproduce on any bug reports."
             },
             "contribs": {
-                "title": "Developers:",
+                "title": "Contributors:",
                 "header.name": "Name",
                 "header.contact": "Contact"
-            },
-            "patch": {
-                "0.1.0": {
-                    "title": "v0.1.0",
-                    "0": "Initial release"
-                }
             }
         },
         "infoboxes": {
@@ -127,6 +115,10 @@
         },
         "settings": {
             "menu": {
+                "about": {
+                    "name": "About",
+                    "label": "About T2K4E Loot Sheet NPC"
+                },
                 "advancedOptions": {
                     "name": "Advanced Options",
                     "label": "Advanced Options & Defaults"

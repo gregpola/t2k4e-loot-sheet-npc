@@ -1,5 +1,5 @@
 import { MODULE } from '../moduleConstants.js';
-import { LootSheetSettingsConfigApp } from './LootSheetConfigApp.js';
+import {AboutApp} from "./AboutApp";
 
 /**
  * @module lootsheetnpct2k4e.ModuleSettings
@@ -29,12 +29,12 @@ export class LootSheetSettings {
          */
 
 
-        game.settings.registerMenu(MODULE.ns, MODULE.settings.keys.sheet.advancedOptions, {
-            name: game.i18n.localize('lsnpc.settings.menu.advancedOptions.name'),
-            label: game.i18n.localize('lsnpc.settings.menu.advancedOptions.label'),
-            icon: "fas fa-user-cog",
-            type: LootSheetSettingsConfigApp,
-            restricted: true
+        game.settings.registerMenu(MODULE.ns, MODULE.settings.keys.sheet.about, {
+            name: game.i18n.localize('lsnpc.settings.menu.about.name'),
+            label: game.i18n.localize('lsnpc.settings.menu.about.label'),
+            icon: "fas fa-question",
+            type: AboutApp,
+            restricted: false
         });
 
         game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.sheetUpdate, {
@@ -46,30 +46,30 @@ export class LootSheetSettings {
             type: Boolean,
         });
 
-        game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.chatGracePeriod, {
-                name: game.i18n.localize('lsnpc.settings.sheet.chatGracePeriod.name'),
-                hint: game.i18n.localize('lsnpc.settings.sheet.chatGracePeriod.hint'),
-                scope: MODULE.settings.scopes.world,
-                config:true,
-                default: 60,
-                range: {
-                    min: 0,
-                    max: 300,
-                    step: 5,
-                },
-                type: Number,
-            }
-        );
+        // game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.chatGracePeriod, {
+        //         name: game.i18n.localize('lsnpc.settings.sheet.chatGracePeriod.name'),
+        //         hint: game.i18n.localize('lsnpc.settings.sheet.chatGracePeriod.hint'),
+        //         scope: MODULE.settings.scopes.world,
+        //         config:true,
+        //         default: 60,
+        //         range: {
+        //             min: 0,
+        //             max: 300,
+        //             step: 5,
+        //         },
+        //         type: Number,
+        //     }
+        // );
 
-
-        game.settings.register(MODULE.ns, MODULE.settings.keys.common.useBetterRolltables, {
-            name: game.i18n.localize('lsnpc.settings.useBetterRolltables.name'),
-            hint: game.i18n.localize('lsnpc.settings.useBetterRolltables.hint'),
-            scope: MODULE.settings.scopes.world,
-            config: false,
-            default: false,
-            type: Boolean
-        });
+        //
+        // game.settings.register(MODULE.ns, MODULE.settings.keys.common.useBetterRolltables, {
+        //     name: game.i18n.localize('lsnpc.settings.useBetterRolltables.name'),
+        //     hint: game.i18n.localize('lsnpc.settings.useBetterRolltables.hint'),
+        //     scope: MODULE.settings.scopes.world,
+        //     config: false,
+        //     default: false,
+        //     type: Boolean
+        // });
 
         // game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.colorRarity, {
         //     name: game.i18n.localize('lsnpc.settings.sheet.colorRarity.name'),
@@ -91,25 +91,25 @@ export class LootSheetSettings {
             type: Boolean
         });
 
-        game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.tradeItems, {
-            name: game.i18n.localize('lsnpc.settings.sheet.tradeItems.name'),
-            hint: game.i18n.localize('lsnpc.settings.sheet.tradeItems.hint'),
-            scope: MODULE.settings.scopes.world,
-            group: MODULE.settings.groups.sheet.moduleDefaults,
-            config: false,
-            default: true,
-            type: Boolean
-        });
+        // game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.tradeItems, {
+        //     name: game.i18n.localize('lsnpc.settings.sheet.tradeItems.name'),
+        //     hint: game.i18n.localize('lsnpc.settings.sheet.tradeItems.hint'),
+        //     scope: MODULE.settings.scopes.world,
+        //     group: MODULE.settings.groups.sheet.moduleDefaults,
+        //     config: false,
+        //     default: true,
+        //     type: Boolean
+        // });
 
-        game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.lootAll, {
-            name: game.i18n.localize('lsnpc.settings.sheet.lootAll.name'),
-            hint: game.i18n.localize('lsnpc.settings.sheet.lootAll.hint'),
-            scope: MODULE.settings.scopes.world,
-            group: MODULE.settings.groups.sheet.loot,
-            config: false,
-            default: true,
-            type: Boolean
-        });
+        // game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.lootAll, {
+        //     name: game.i18n.localize('lsnpc.settings.sheet.lootAll.name'),
+        //     hint: game.i18n.localize('lsnpc.settings.sheet.lootAll.hint'),
+        //     scope: MODULE.settings.scopes.world,
+        //     group: MODULE.settings.groups.sheet.loot,
+        //     config: false,
+        //     default: true,
+        //     type: Boolean
+        // });
 
         game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.generateChatMessages , {
             name: game.i18n.localize('lsnpc.settings.sheet.generateChatMessages.name'),

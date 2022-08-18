@@ -1,6 +1,7 @@
 export const MODULE = {
     appIds: {
         lootsheet: 'lootsheetnpct2k4e',
+        lootsheetAbout: 'lootsheetnpct2k4e-about',
         lootsheetSettings: 'lootsheetnpct2k4e-lootsheet-settings',
         ruleEditor: 'lootsheetnpct2k4e-rule-editor',
     },
@@ -70,6 +71,7 @@ export const MODULE = {
                 addInterfaceButtons: 'addInterfaceButtons'
             },
             sheet: {
+                about: 'about',
                 advancedOptions: 'advancedSheetOptions',
                 buyItem: 'buyItem',
                 buyAll: 'buyAll',

@@ -1,7 +1,5 @@
 import { MODULE } from '../moduleConstants.js';
 import { LootSheetSettings } from '../settings/LootSheetSettings.js';
-import { VersionCheck } from '../helper/VersionCheckHelper.js';
-import { renderWelcomeScreen } from '../settings/WelcomeScreen.js';
 import { API } from '../API.js';
 
 import { SocketListener } from './SocketListener.js';
@@ -72,10 +70,6 @@ export class LootsheetNPCHooks {
     static foundryReady() {
         HandlebarsHelper.register();
 
-        if (game.user.isGM && VersionCheck.check(MODULE.ns)) {
-            renderWelcomeScreen();
-        }
-
         LootsheetNPCHooks._handleMigrations();
         ChatListener.init();
     }
@@ -94,7 +88,7 @@ export class LootsheetNPCHooks {
                 if (!e.currentTarget.dataset.uuid) return;
                 const doc = await fromUuid(e.currentTarget.dataset.uuid);
                 if (!doc) return;
-                if (doc.collectionName == 'tokens') {
+                if (doc.collectionName === 'tokens') {
                     await doc.actor.sheet.render(true);
                 } else {
                     await doc.sheet.render(true);
