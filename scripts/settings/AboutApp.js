@@ -18,21 +18,6 @@ export class AboutApp extends FormApplication {
         });
     }
 
-    /**
-     * Call app default options
-     * @override
-     */
-    static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
-            id: "combat-carousel-about",
-            title: "About Combat Carousel",
-            template: "modules/combat-carousel/templates/about.hbs",
-            popOut: true,
-            width: 500,
-            height: 605
-        });
-    }
-
     /* -------------------------------------------- */
 
     /** @override */

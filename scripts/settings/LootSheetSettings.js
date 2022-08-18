@@ -1,5 +1,5 @@
 import { MODULE } from '../moduleConstants.js';
-import {AboutApp} from "./AboutApp";
+import {AboutApp} from "./AboutApp.js";
 
 /**
  * @module lootsheetnpct2k4e.ModuleSettings
@@ -85,8 +85,7 @@ export class LootSheetSettings {
             name: game.i18n.localize('lsnpc.settings.sheet.lootItem.name'),
             hint: game.i18n.localize('lsnpc.settings.sheet.lootItem.hint'),
             scope: MODULE.settings.scopes.world,
-            group: MODULE.settings.groups.sheet.loot,
-            config: false,
+            config: true,
             default: true,
             type: Boolean
         });
@@ -115,8 +114,7 @@ export class LootSheetSettings {
             name: game.i18n.localize('lsnpc.settings.sheet.generateChatMessages.name'),
             hint: game.i18n.localize('lsnpc.settings.sheet.generateChatMessages.hint'),
             scope: MODULE.settings.scopes.world,
-            group: MODULE.settings.groups.sheet.moduleDefaults,
-            config: false,
+            config: true,
             default: true,
             type: Boolean
         });
@@ -152,15 +150,15 @@ export class LootSheetSettings {
         //     type: Boolean
         // });
 
-        game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.reduceUpdateVerbosity, {
-            name: game.i18n.localize('lsnpc.settings.sheet.reduceUpdateVerbosity.name'),
-            hint: game.i18n.localize('lsnpc.settings.sheet.reduceUpdateVerbosity.hint'),
-            scope: MODULE.settings.scopes.world,
-            group: MODULE.settings.groups.sheet.moduleDefaults,
-            config: false,
-            default: true,
-            type: Boolean
-        });
+        // game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.reduceUpdateVerbosity, {
+        //     name: game.i18n.localize('lsnpc.settings.sheet.reduceUpdateVerbosity.name'),
+        //     hint: game.i18n.localize('lsnpc.settings.sheet.reduceUpdateVerbosity.hint'),
+        //     scope: MODULE.settings.scopes.world,
+        //     group: MODULE.settings.groups.sheet.moduleDefaults,
+        //     config: false,
+        //     default: true,
+        //     type: Boolean
+        // });
 
         // game.settings.register(MODULE.ns, MODULE.settings.keys.sheet.maxPriceIncrease, {
         //     name: game.i18n.localize('lsnpc.settings.sheet.maxPriceIncrease.name'),

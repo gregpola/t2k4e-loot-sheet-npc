@@ -72,6 +72,7 @@
 
         },
         "about": {
+            "title": "T2K4E Loot Sheet NPC v{version}",
             "readme": "More Info",
             "changelog": "Change Log",
             "bugs": {
@@ -158,7 +159,7 @@
                 },
                 "generateChatMessages" : {
                     "name": "Chat messages",
-                    "hint": "Generate chat messages when players take, buy or sell items."
+                    "hint": "Generate chat messages when players take items."
                 },
                 "lootAll": {
                     "name": "Loot all",
