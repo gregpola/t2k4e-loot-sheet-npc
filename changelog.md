@@ -1,2 +1,2 @@
-# v0.0.1
-* Initial data structures and selective imports from @jopeek/fvtt-loot-sheet-npc-5e
+# v0.1.0
+* Initial conversion from @jopeek/fvtt-loot-sheet-npc-5e to support T2K4E
