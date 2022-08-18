@@ -88,7 +88,7 @@ export class LootSheetNPCHelper {
             return;
         }
 
-        if (!event.shiftKey) {
+        if (maxQuantity < 2) {
             await this.emitToSocketOrCallMethod(packet);
         } else {
             // shiftKey, we ask for the quantity
