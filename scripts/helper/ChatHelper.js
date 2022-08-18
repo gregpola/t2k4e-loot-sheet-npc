@@ -180,19 +180,19 @@ export class ChatHelper {
             return existingItems;
         }
 
-        const stamp = lootMessage?.data.timestamp ?? 0,
-            timeSince = (Date.now() - stamp),
-            gracePeriod = game.settings.get(MODULE.ns, MODULE.settings.keys.sheet.chatGracePeriod),
-            outOfGrace = timeSince > (gracePeriod * 1000);
+        const stamp = lootMessage?.data.timestamp ?? 0;
+        //     timeSince = (Date.now() - stamp),
+        //     gracePeriod = game.settings.get(MODULE.ns, MODULE.settings.keys.sheet.chatGracePeriod),
+        //     outOfGrace = timeSince > (gracePeriod * 1000);
         //if the existing message is older than the gracePeriod, ignore it
         if (options.verbose) {
             console.log(`${MODULE.ns} | ChatHelper | getItemsFromLootMessage |`, lootMessage, stamp);
-            console.log(`${MODULE.ns} | ChatHelper | getItemsFromLootMessage | timeSince: ${timeSince} | gracePeriod: ${gracePeriod} | outOfGrace: ${outOfGrace}`);
+            // console.log(`${MODULE.ns} | ChatHelper | getItemsFromLootMessage | timeSince: ${timeSince} | gracePeriod: ${gracePeriod} | outOfGrace: ${outOfGrace}`);
         }
-        if (outOfGrace) return existingItems;
-
-        console.log(`${MODULE.ns} | ChatHelper | getItemsFromLootMessage | Found existing message within the grace period of interactionId: ${interactionId}`);
-        existingItems = { id: lootMessage.id, items: lootMessage.getFlag(MODULE.ns, 'loot') };
+        // if (outOfGrace) return existingItems;
+        //
+        // console.log(`${MODULE.ns} | ChatHelper | getItemsFromLootMessage | Found existing message within the grace period of interactionId: ${interactionId}`);
+        // existingItems = { id: lootMessage.id, items: lootMessage.getFlag(MODULE.ns, 'loot') };
 
         return existingItems;
     }

@@ -36,7 +36,6 @@
     {
       "name": "t2k4e-loot-sheet-items",
       "label": "T2K4E Loot Sheet Items",
-      "module": "t2k4e-loot-sheet-npc",
       "system": "t2k4e",
       "path": "./packs/items.db",
       "entity": "Item",
@@ -45,11 +44,18 @@
     {
       "name": "t2k4e-loot-sheet-macros",
       "label": "T2K4E Loot Sheet Macros",
-      "module": "t2k4e-loot-sheet-npc",
       "system": "t2k4e",
       "path": "./packs/macros.db",
       "entity": "Macro",
       "type": "Macro"
+    },
+    {
+      "name": "t2k4e-loot-sheet-actors",
+      "label": "T2K4E Loot Sheet Actors",
+      "system": "t2k4e",
+      "path": "./packs/actors.db",
+      "entity": "Actor",
+      "type": "Actor"
     }
   ],
   "url": "This is auto replaced",
