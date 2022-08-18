@@ -72,7 +72,8 @@
 
         },
         "about": {
-            "title": "T2K4E Loot Sheet NPC v{version}",
+            "title": "T2K4E Loot Sheet NPC ",
+            "version": "Version",
             "readme": "More Info",
             "changelog": "Change Log",
             "bugs": {
