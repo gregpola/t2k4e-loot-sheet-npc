@@ -30,7 +30,7 @@ Players given Observer permission are allowed to freely loot from loot sheet NPC
 There is a macro compendium included with macros that will convert selected tokens to a loot sheet and back to default.
 
 ### Compatibility:
-- Tested with FVTT v9 and the T2K4E system v2.3.0 only.
+- Tested with FVTT v9 and the T2K4E system v1.6+.
 
 ### Installation Instructions
 
