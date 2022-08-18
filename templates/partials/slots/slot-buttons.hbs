@@ -7,8 +7,7 @@
             {{{@root.config.Icons.buttons.delete}}}
         </a>
     {{else}}
-<!--        <a class="item-control lsnpc-action-link" title="Loot Item" data-action="lootItem" data-get-all="false"><i class="ra ra-hand"></i></a>-->
-        <a class="button lsnpc-action-link" data-action="lootItem" data-get-all="false" title="{{localize "lsnpc.buttons.loot.gear.label"}}">
+        <a class="button lsnpc-action-link" data-action="lootItem" data-get-all="false" data-max-quantity="{{data.qty}}" title="{{localize "lsnpc.buttons.loot.gear.label"}}">
             {{{@root.config.Icons.buttons.stash}}}
         </a>
     {{/if}}

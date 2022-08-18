@@ -95,7 +95,6 @@ export class LootSheetNPCT2k4e extends ActorSheetT2K {
         context.totalPrice = totals.price.toLocaleString('en') + " ammo";
         context.totalQuantity = totals.quantity;
         context.observerCount = PermissionHelper.getEligableActors(this.actor).length;
-        context.lootAll = game.settings.get(MODULE.ns, "lootAll");
         return context;
     }
 

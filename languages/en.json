@@ -69,7 +69,11 @@
             }
         },
         "defaults": {
-
+            "of": "of",
+            "quantity-title": "Quantity",
+            "quantity": "quantity",
+            "accept-title": "Accept",
+            "cancel-title": "Cancel"
         },
         "about": {
             "title": "T2K4E Loot Sheet NPC ",

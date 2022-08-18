@@ -6,23 +6,24 @@ class QuantityDialog extends Dialog {
 
         let applyChanges = false;
         super({
-            title: "Quantity",
+            title: game.i18n.localize('lsnpc.defaults.quantity-title'),
             content: `
             <form>
                 <div class="form-group">
-                    <label>Quantity:</label>
-                    <input type="number" min="1" max="`+ options.max +`" step="1" id="quantity" name="quantity" value="1">
+                    <label>game.i18n.localize('lsnpc.defaults.quantity-title'):</label>
+                    <input type="number" min="1" max="`+ options.max +`" step="1" id="quantity" name="game.i18n.localize('lsnpc.defaults.quantity')" value="1">
+                    <label style="margin-left: 10px;">game.i18n.localize('lsnpc.defaults.of') ${options.max}</label>
                 </div>
             </form>`,
             buttons: {
                 yes: {
                     icon: "<i class='fas fa-check'></i>",
-                    label: options.acceptLabel ? options.acceptLabel : "Accept",
+                    label: options.acceptLabel ? options.acceptLabel : game.i18n.localize('lsnpc.defaults.accept-title'),
                     callback: () => applyChanges = true
                 },
                 no: {
                     icon: "<i class='fas fa-times'></i>",
-                    label: "Cancel"
+                    label: game.i18n.localize('lsnpc.defaults.cancel-title')
                 },
             },
             default: "yes",
