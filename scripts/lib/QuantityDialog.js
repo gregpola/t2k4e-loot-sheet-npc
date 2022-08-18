@@ -10,10 +10,11 @@ class QuantityDialog extends Dialog {
             content: `
             <form>
                 <div class="form-group">
-                    <label>game.i18n.localize('lsnpc.defaults.quantity-title'):</label>
-                    <input type="number" min="1" max="`+ options.max +`" step="1" id="quantity" name="game.i18n.localize('lsnpc.defaults.quantity')" value="1">
-                    <label style="margin-left: 10px;">game.i18n.localize('lsnpc.defaults.of') ${options.max}</label>
+                    <label>${game.i18n.localize('lsnpc.defaults.quantity-title')}:</label>
+                    <input type="number" min="1" max="`+ options.max +`" step="1" id="quantity" name="${game.i18n.localize('lsnpc.defaults.quantity')}" value="1">
+                    <label style="margin-left: 10px;">${game.i18n.localize('lsnpc.defaults.of')} ${options.max}</label>
                 </div>
+				<br />
             </form>`,
             buttons: {
                 yes: {
